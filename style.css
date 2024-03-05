@@ -1,0 +1,9 @@
+/* všechny elementy */
+* { 
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+/* bude využit celý display */
+body {margin: 0;}
+
+div {background-color: #ddd;}
