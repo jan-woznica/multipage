@@ -7,6 +7,7 @@
   <meta name="keywords" content="HTML, základy">
   <meta name="author" content="Jan Woznica">
   <title>Jan Woznica</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 <h1>Tato stránka bude věnována HTML</h1> 
@@ -18,15 +19,15 @@
 <a href="git.html">Git</a>
 <a href="cmd.html">Command line</a>
 
-  <h2>HEAD</h2>
+  <h2>HTML VERZE</h2>
   <p>Každý soubor na začátku musí obsahovat informaci, o jaký dokument se jednák. V jakém jazyku na soubor napsán</p>
 <pre> &lt!DOCTYPE html&gt
 &lthtml lang="cs"&gt
   </pre>
   <p>Doctype dříve byl odkaz na souhrn pravidel, ale nyní je to již pouze artefakt, který se musí zahrnout, aby vše fungovalo<br>
   Vždy nastavit jazyk, SEO bude lépe indexovat stránku, jazyk lze nastavit i pomocí inline řádků. Když nebudu vědět zkratky jazyků tak vyhledat language tags</p>
-  <p>Soubor ukládat jako index.html. Pro kontrolu dokumentů využít <a hraf="https://validator.w3.org/">Markup Validation Service</a><br>
-  Soubor poté následuje:</p>
+  <p>Soubor ukládat jako index.html. Pro kontrolu dokumentů využít <a href="https://validator.w3.org/">Markup Validation Service</a></p>
+<h2>HEAD</h2>
 <pre>&lthead&gt
 &ltmeta charset="UTF-8"t&gt
 </pre>
@@ -44,6 +45,8 @@ Další Charsety: Ascii (první kódovací styl), ANSI 1252 (windows original), 
 Specifikace description obsahuje klíčové fráze, aby se stránka zobrazila výše ve vyhledávání SEO<br>
 Další metadata: open graph (protokol, který vytvořil Facebook, aby se stránka zobrazila s obrázkem i popisem) <br>
 Author odkazuje na autora stránky a title nastaví název stránce</p>
+
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
 
 </body>
 </html>
