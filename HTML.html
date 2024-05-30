@@ -10,7 +10,8 @@
   <link rel="icon" href="fox.png" type="image/x-icon" />
 </head>
 <body>
-<h1>Tato stránka bude věnována HTML</h1> 
+<h1>Tato stránka bude věnována HTML základům</h1> 
+  
 <a href="index.html">HOME</a>
 <a href="itbasics.html">IT základy</a>
 <a href="HTML.html">HTML</a>
@@ -20,13 +21,13 @@
 <a href="cmd.html">Command line</a>
 
   <h2>HTML VERZE</h2>
-  <p>Každý soubor na začátku musí obsahovat informaci, o jaký dokument se jednák. V jakém jazyku na soubor napsán</p>
+  <p>Každý soubor na začátku musí obsahovat informaci, o jaký dokument se jedná. V jakém jazyku na soubor napsán</p>
 <pre> &lt!DOCTYPE html&gt
 &lthtml lang="cs"&gt
   </pre>
   <p>Doctype dříve byl odkaz na souhrn pravidel, ale nyní je to již pouze artefakt, který se musí zahrnout, aby vše fungovalo<br>
   Vždy nastavit jazyk, SEO bude lépe indexovat stránku, jazyk lze nastavit i pomocí inline řádků. Když nebudu vědět zkratky jazyků tak vyhledat language tags</p>
-  <p>Soubor ukládat jako index.html. Pro kontrolu dokumentů využít <a href="https://validator.w3.org/">Markup Validation Service</a></p>
+  <p>Soubor ukládat jako index.html. Pro kontrolu dokumentů využít <a href="https://validator.w3.org/">Markup Validation Service a při testu webů stačí dva prohlížeče (Firefox, Chrome, Opera nebo Edge</a></p>
 <h2>HEAD</h2>
 <pre>&lthead&gt
 &ltmeta charset="UTF-8"t&gt
@@ -46,9 +47,17 @@ Specifikace description obsahuje klíčové fráze, aby se stránka zobrazila v�
 Další metadata: open graph (protokol, který vytvořil Facebook, aby se stránka zobrazila s obrázkem i popisem) <br>
 Author odkazuje na autora stránky a title nastaví název stránce</p>
 <pre>
-&ltlink rel="icon" href="favicon.ico" type="image/x-icon" /&gt</pre>
-<p>Vlastní favicon (krátký výraz pro favorites icon) jsou 16 pixelové a lze je vidět na záložce stránky<br>
+&ltlink rel="icon" href="favicon.ico" type="image/x-icon" /&gt
+&ltlink rel="stylesheet" href="styles.css&gt</pre>
+<p>Ikony lze vidět na záložce stránky, buď lze nastavit obrázek nebo třeba vlastní favicon (krátký výraz pro favorites icon) jsou 16 pixelové<br>
 favicon.ico je soubor s iconou v aktuální složce, ale i stránka, kde si lze vytvářet vlastní favicony<br>
-Pokud stránka využívá Content Security Policy (CSP) a budu mít problém s nezobrazováním ikony, tak zkontrolovat Content-Security-Policy</p>
+Pokud stránka využívá Content Security Policy (CSP) a budu mít problém s nezobrazováním ikony, tak zkontrolovat Content-Security-Policy<br>
+Lze odkazovat na css soubory tkzv stylesheet nebo JavaScript, tyto soubory jsou buď ve složce nebo na internetu</p>
+<h2>BODY</h2>
+<p>HTML se skládá z elementů a tyto elementy se skládají z dalších prvků, kde Nesting je skládání prvků z dalších prvků. HTML lze rozdělit na kapitoly pomocí &lth1&gt-&lth6&gt, kde &lth1&gt by mělo být použito pouze jednou na stránku (Nadpis body je na úrovni &lth2&gt<br>
+Nadpisy jsou důležité, protože SEO využivá nadpisy jako klíčové fráze a Screenreadry nejdříve čtou názvy kapitol.<br>
+Další základní elementy &ltp&gt (paragraf - do kterého píšeme veškterý text), &lt!-- Tohle je komentář, který nebude vidět--&gt, &ltbr&gt takzvaný breakline vloží následující text na další řádek, &lthr&gt vloží podtržítko pod text a pokračuje se pod ním<br>
+Text lze i stylovat na různé velikosti a barvy, ale o tom více v CSS</p>
+<p title="Toto je title"> &ltp title="Po najetí myší přes text zobrazí title"&ltp&gt</p>
 </body>
 </html>
