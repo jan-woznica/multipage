@@ -17,16 +17,23 @@
 
   <h2>HEAD</h2>
   <p>Každý soubor na začátku musí obsahovat informaci, o jaký dokument se jednák. V jakém jazyku na soubor napsán</p>
-  <pre> &lt!DOCTYPE html&gt
+<pre> &lt!DOCTYPE html&gt
 &lthtml lang="cs"&gt
   </pre>
   <p>Doctype dříve byl odkaz na souhrn pravidel, ale nyní je to již pouze artefakt, který se musí zahrnout, aby vše fungovalo<br>
   Vždy nastavit jazyk, SEO bude lépe indexovat stránku, jazyk lze nastavit i pomocí inline řádků. Když nebudu vědět zkratky jazyků tak vyhledat language tags</p>
   <p>Soubor ukládat jako index.html. Pro kontrolu dokumentů využít <a hraf="https://validator.w3.org/">Markup Validation Service</a><br>
   Soubor poté následuje:</p>
-  <pre>&lthead&gt
-  &lmeta charset="UTF-8"t&gt
-  </pre>
+<pre>&lthead&gt
+&ltmeta charset="UTF-8"t&gt
+</pre>
+<p>Meta jsou metadata pro stránku a existuje několik druhů<br>
+Charset je potřeba nadefinovat co nejdříve, jelikož slouží ke kódování stránky a UTF používá téměř všechny znaky na světě <br>
+Další Charsety: Ascii (první kódovací styl), ANSI 1252 (windows original), ISO-8859-1 (pro HTML 4)<br>
+</p> 
+<pre>&ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+&ltmeta name="author" content="Jan Woznica"&gt 
+</pre>
   
 </body>
 </html>
