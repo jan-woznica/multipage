@@ -112,6 +112,11 @@ Pozor! Nevyužívat u, i, b, jelikož nejsou významné pro SEO</p>
   <p>Pro nastavení výšky a šířky obrázku. Čím větší obrázek, tím déle se bude načítat - 800px zabere 128kb, 480px zabere 63kb<br>
   Nepoužívat následující k měnění velikostí obrázků</p>
   <img srcset="pictures/hokej.jpg 480w, pictures/office.jpg 800w" sizes="(max-width: 600px) 480px, 800px" src="pictures/office.jpg" alt="Obrázek"> </p>
+  <picture>
+  <source media="(max-width: 599px)" srcset="pictures/hokej.jpg" />
+  <source media="(min-width: 600px)" srcset="pictures/office.jpg" />
+  <img src="picture/office.jpg" alt="obrázky podle velikosti obrazovky" />
+  </picture>
   <pre></pre>
   <h4>MAPA</h4>
   <p>Obrázek lze udělat klikatelný a to buď celý nebo jeho část <br>
