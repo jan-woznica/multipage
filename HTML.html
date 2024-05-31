@@ -107,6 +107,12 @@ Pozor! Nevyužívat u, i, b, jelikož nejsou významné pro SEO</p>
   Veřejná doména (práce bez jakýchkoliv oprávnění) lze používat bez oprávnění. Díla mohou skončit na doméně různými způsoby např: vypršení copyrightu. Pro vydání díla na veřejné doměně se dílo vydává pod licencí CC0</pre>
   <p>Při hledání obrázků tedy napsat hledaná výraz spolu s žádanou licencí, u google orbázků lze i nastavit filtry hledání s usage rights<br>
   Lze také využít repositáře jako flickr, shutterstock nebo pixabay</p>
+  
+  <h4>OBRÁZKY PODLE VELIKOSTI OBRAZOVKY</h4>
+  <p>Pro nastavení výšky a šířky obrázku. Čím větší obrázek, tím déle se bude načítat - 800px zabere 128kb, 480px zabere 63kb<br>
+  Nepoužívat následující k měnění velikostí obrázků</p>
+  img srcset="pictures/hokej.jpg 480w, pictures/office.jpg 800w" sizes="(max-width: 600px) 480px, 800px" src="pictures/office.jpg" alt="Obrázek" </p>
+  <pre></pre>
   <h4>MAPA</h4>
   <p>Obrázek lze udělat klikatelný a to buď celý nebo jeho část <br>
   &ltimg&gt Elementy mouhou mít atributy jako src, alt, width, class <br>
@@ -131,6 +137,8 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
   <p style="background-image: url('pictures/hokej.jpg');">&ltp style="background-image: url('link');"&gt </p>
   <h4>Obrázek jako link</h4>
 <p>Následující obrázek přesměruje na wikipedii</p>
-<a href="https://cs.wikipedia.org/wiki/Perlorodka_%C5%99%C3%AD%C4%8Dn%C3%AD"><img src="pictures/hokej.jpg" alt="winners2024" style="width:200px;height:320px" target="_blank" >EHM</a>
+<a href="https://cs.wikipedia.org/wiki/Perlorodka_%C5%99%C3%AD%C4%8Dn%C3%AD"><img src="pictures/hokej.jpg" alt="winners2024" style="width:520px;height:260px" target="_blank" ></a>
+  <pre> &lta href="link na nové místo"&gt&lt src="zdroj" alt="alternativní název"&gt&lt/a&gt</pre>
+  
 </body>
 </html>
