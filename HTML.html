@@ -200,5 +200,23 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
   <pre>&lta href="url" target="iframe_a"&gttext&lt/a&gt&lt/p&gt</pre>
   <p>Pro embed a object je často lepší vložit link než vkládat celé pdf</p>
   <h3>TABULKA</h3>
+<p>Dříve se tabulka využívala na stylování stránky, ale teď již to je nevhodné</p>
+<pre>
+&lttd&gt (table data) označuje buňky, lttr&gt (table row) slouží k psaní dalšího řádku, &ltth&gt (table header) je název, th jsou defaultně bold a nastavené na střed
+&ltscope&gt se přidává do th, aby řekl screanreaderům na co je header, úplně nejjednodušší možnost je &ltscope="col"td označuje buňky data tabulky<br>
+&ltrowspan&gt na více řádků a &ltcolspan&gt na sloupce
+&ltcolgroup&gt slouží ke stylování pro celý sloupec a &ltspan&gt říká počet slupců, lze nastavit border, background, width a visibility</pre>
+<p>Sloupci lze udělit thead,tbody,tfoot jako v layoutu a je to vhodné pro stylování tabulek a tabulky lze i nestovat (vložit jednu tabulku do buňky druhé</p>
+
+<table>
+  <caption>TABULKA1</caption>
+  <colgroup>
+    <col span="2" style="background-color:white">
+    <col span="1" style="visibility: collapse">
+  </colgroup>
+  <tr>
+    <th>Pozice</th>
+  </tr>
+</table>
 </body>
 </html>
