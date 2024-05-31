@@ -27,7 +27,8 @@
   </pre>
   <p>Doctype dříve byl odkaz na souhrn pravidel, ale nyní je to již pouze artefakt, který se musí zahrnout, aby vše fungovalo<br>
   Vždy nastavit jazyk, SEO bude lépe indexovat stránku, jazyk lze nastavit i pomocí inline řádků. Když nebudu vědět zkratky jazyků tak vyhledat language tags</p>
-  <p>Soubor ukládat jako index.html. Pro kontrolu dokumentů využít <a href="https://validator.w3.org/">Markup Validation Service a při testu webů stačí dva prohlížeče (Firefox, Chrome, Opera nebo Edge</a></p>
+  <p>Soubor ukládat jako index.html. Pro kontrolu dokumentů využít <a href="https://validator.w3.org/">Markup Validation Service a při testu webů stačí dva prohlížeče (Firefox, Chrome, Opera nebo Edge</a><br>
+  Pro nastavení https lze využít Lets encrypt, který obsahuje nástroje a instrukce jak automaticky vytvořit a instalovat potřebné certifikáty</p>
 
   <h2>HEAD</h2>
 <pre>&lthead&gt
@@ -97,7 +98,13 @@ Pozor! Nevyužívat u, i, b, jelikož nejsou významné pro SEO</p>
     Α (alpha) napíšeme pomocí & # 9 1 3
    💗(srdíčko) napíšeme pomocí & # 1 2 8 1 5 1
   </pre>
-  
+
+  <h3>CESTY S SOUBORŮM</h3>
+  <pre>Pokud jsou ve stejné složce src="picture.jpg"
+  Ve složce images ve stejné složce src="images/picture.jpg
+  Ve složce images v rootu současného webu src="/images/picture.jpg
+  O složku výše oproti současné .../picture.jpg</pre>
+  <p>Dokumentové fragmenty jsou použití linku v hlavě spolu s id a v body napojené pomocí #názvuid</p>
   <h3>LINKY</h3>
   <p>Linky slouží k přemisťování na webu pomocí URL (uniform resource locator). Link lze vytvořit z text, obrázku atd...</p>
   <h4>PŘESMĚROVÁNÍ LINKŮ</h4>
@@ -178,12 +185,20 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
 <a href="https://cs.wikipedia.org/wiki/Perlorodka_%C5%99%C3%AD%C4%8Dn%C3%AD"><img src="pictures/hokej.jpg" alt="winners2024" style="width:620px;height:360px" target="_blank" ></a>
   <pre> &lta href="link na nové místo"&gt&lt src="zdroj" alt="alternativní název"&gt&lt/a&gt</pre>
 
-  <h3>IFRAME</h3>
+  <h3>IFRAME, EMBED A OBJECT</h3>
   <p>V době pluginů (Flash, Java Applets), které umožňovali programátorům vložit větší obsah, který nebyl dostupný za pomoci html pouze, zapojení těchto technologií bylo provedeno za pomocí object a embed elementů, ale ty se dneš již nepoužívají<br>
-  pomocí iframe lze vložit stránky, videa z youtube nebo mapy, které budou vloženy formou framu v okně stránky</p>
+  Iframe se přestal také používat, protože byl častým terčem hackerů pomocí clickjackingu (vložení neviditelného iframu do dokumentu nebo vložení mé stránky do jejich k zachycení uživatelských informací<br>
+  Jiné stránky nelze vkládat, protože mají nastaven csp derictiva a zároveň autor má autorská práva, ale i tak se doporučuje používat https zabezpečení<br>
+  pomocí iframe lze vložit stránky, videa z youtube nebo mapy, které budou vloženy formou framu v okně stránky
+ atribut sandbox slouží, aby ifrmay neměli změny v html, konfigurace CSP directive(content security policy) zprostředkuje set http nadpisů (metadata poslána spolu se stránkou a lze tedy nastavit x-Frame options, který zakazuje vkládání mého html do cizího html </p>
   <iframe src="https://mapy.cz/s/bonefasuco" style="border:none; height:400px; width:600px;" name="iframe_a" title="ALBERT" allowfullscreen></iframe>
   <pre>
     &ltiframe src="url" style="border:none; height:400px; width:600px;" name="iframe_a" title="most" allowFullscreen&gt&lt/iframe&gt
   </pre>
+  <p>Následující tlačítko vloží jiný link do iframu</p>
+ <a href="https://cs.wikipedia.org/wiki/Wikipedie:Zaj%C3%ADmavosti" target="iframe_a">Vložit jiný link</a></p>
+  <pre>&lta href="url" target="iframe_a"&gttext&lt/a&gt&lt/p&gt</pre>
+  <p>Pro embed a object je často lepší vložit link než vkládat celé pdf</p>
+  <h3>TABULKA</h3>
 </body>
 </html>
