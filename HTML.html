@@ -28,7 +28,8 @@
   <p>Doctype dříve byl odkaz na souhrn pravidel, ale nyní je to již pouze artefakt, který se musí zahrnout, aby vše fungovalo<br>
   Vždy nastavit jazyk, SEO bude lépe indexovat stránku, jazyk lze nastavit i pomocí inline řádků. Když nebudu vědět zkratky jazyků tak vyhledat language tags</p>
   <p>Soubor ukládat jako index.html. Pro kontrolu dokumentů využít <a href="https://validator.w3.org/">Markup Validation Service a při testu webů stačí dva prohlížeče (Firefox, Chrome, Opera nebo Edge</a></p>
-<h2>HEAD</h2>
+
+  <h2>HEAD</h2>
 <pre>&lthead&gt
 &ltmeta charset="UTF-8"t&gt
 </pre>
@@ -53,7 +54,8 @@ Author odkazuje na autora stránky a title nastaví název stránce</p>
 favicon.ico je soubor s iconou v aktuální složce, ale i stránka, kde si lze vytvářet vlastní favicony<br>
 Pokud stránka využívá Content Security Policy (CSP) a budu mít problém s nezobrazováním ikony, tak zkontrolovat Content-Security-Policy<br>
 Lze odkazovat na css soubory tkzv stylesheet nebo JavaScript, tyto soubory jsou buď ve složce nebo na internetu</p>
-<h2>BODY</h2>
+
+  <h2>BODY</h2>
 <p>HTML se skládá z elementů a tyto elementy se skládají z dalších prvků, kde Nesting je skládání prvků z dalších prvků. HTML lze rozdělit na kapitoly pomocí &lth1&gt-&lth6&gt, kde &lth1&gt by mělo být použito pouze jednou na stránku (Nadpis body je na úrovni &lth2&gt<br>
 Nadpisy jsou důležité, protože SEO využivá nadpisy jako klíčové fráze a Screenreadry nejdříve čtou názvy kapitol.<br>
 Další základní elementy &ltp&gt (paragraf - do kterého píšeme veškterý text), &lt!-- Tohle je komentář, který nebude vidět--&gt, &ltbr&gt takzvaný breakline vloží následující text na další řádek, &lthr&gt vloží podtržítko pod text a pokračuje se pod ním<br>
@@ -95,6 +97,23 @@ Pozor! Nevyužívat u, i, b, jelikož nejsou významné pro SEO</p>
     Α (alpha) napíšeme pomocí & # 9 1 3
    💗(srdíčko) napíšeme pomocí & # 1 2 8 1 5 1
   </pre>
+  
+  <h3>LINKY</h3>
+  <p>Linky slouží k přemisťování na webu pomocí URL (uniform resource locator). Link lze vytvořit z text, obrázku atd...</p>
+  <h4>PŘESMĚROVÁNÍ LINKŮ</h4>
+  <pre>
+    target="_blank" otevře link v novém okně
+    target="_self" otevře link v aktuálním okně
+    target="_parent" otevře link v rodičovském okně, i když to moc nechápu
+    target="_top" otevře link v celém těle okna - asi když je okna zmenšené
+  </pre>
+  <h4>EMAIL LINK</h4>
+  <p>odkaz na email se často používá jako share link, kdy uživatel klikne a pošle na adresu svého výběru. ke kódu se přidává i cc, bcc, subject, body</p>
+  <p> &ltp&gt &lta href="mailto:email@email.com"&gt <a href="mailto:wozni@seznam.cz">klikni pro kontaktování</a></p>
+  <h4>TLAČÍTKO JAKO LINK</h4>
+  <button onclick="document.location='https://i.ebayimg.com/images/g/UyoAAOSwgatkmNAT/s-l1200.webp'">Billie Eilish</button><br>
+  <pre>&ltbutton onclick="document.location='url'"&gttext na tlačítku&ltbutton&gt</pre>
+  
   <h3>OBRÁZKY</h3>
   <p> Jelikož SEO čtou i názvy obrázků nebo alt, tak je důležité vše správně pojmenovat<br>
   V rozvynutějších set upech se využívá CDN (Content Delivery Network) pro nahrávání obrázků<br>
@@ -107,17 +126,31 @@ Pozor! Nevyužívat u, i, b, jelikož nejsou významné pro SEO</p>
   Veřejná doména (práce bez jakýchkoliv oprávnění) lze používat bez oprávnění. Díla mohou skončit na doméně různými způsoby např: vypršení copyrightu. Pro vydání díla na veřejné doměně se dílo vydává pod licencí CC0</pre>
   <p>Při hledání obrázků tedy napsat hledaná výraz spolu s žádanou licencí, u google orbázků lze i nastavit filtry hledání s usage rights<br>
   Lze také využít repositáře jako flickr, shutterstock nebo pixabay</p>
+
+  <h4>FIGURE A FIGCAPTION</h4>
+  <p>Figure slouží pro obrázky, ilustrace, diagramy, etc... na které se odkazuje v hlavním toku dokumentu, ale lze je přesunout do jiné části dokumentu a figcaption je jejich popisek</p>
+<figure>
+  <figcaption><b>Popis</b></figcaption>
+  <blockquote>
+   Tohle je citace toto, co jsem si vymyslel za text
+  </blockquote>
+</figure>
   
   <h4>OBRÁZKY PODLE VELIKOSTI OBRAZOVKY</h4>
   <p>Pro nastavení výšky a šířky obrázku. Čím větší obrázek, tím déle se bude načítat - 800px zabere 128kb, 480px zabere 63kb<br>
-  Nepoužívat následující k měnění velikostí obrázků</p>
-  <img srcset="pictures/hokej.jpg 480w, pictures/office.jpg 800w" sizes="(max-width: 600px) 480px, 800px" src="pictures/office.jpg" alt="Obrázek"> </p>
+  Následující změní obrázek podle velikosti okna. Nepoužívat následující k měnění velikostí obrázků</p>
   <picture>
   <source media="(max-width: 599px)" srcset="pictures/office.jpg" />
   <source media="(min-width: 600px)" srcset="pictures/hokej.jpg" />
   <img src="picture/hokej.jpg" alt="obrázky podle velikosti obrazovky" />
   </picture>
-  <pre></pre>
+  <pre>Zdrojový kód:
+     &ltpicture&gt
+  &ltsource media="(max-width: 599px)" srcset="pictures/office.jpg" /&gt
+  &ltsource media="(min-width: 600px)" srcset="pictures/hokej.jpg" /&gt
+  &ltimg src="picture/hokej.jpg" alt="obrázky podle velikosti obrazovky" /&gt
+  &lt/picture&gt
+  </pre>
   <h4>MAPA</h4>
   <p>Obrázek lze udělat klikatelný a to buď celý nebo jeho část <br>
   &ltimg&gt Elementy mouhou mít atributy jako src, alt, width, class <br>
@@ -144,6 +177,11 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
 <p>Následující obrázek přesměruje na wikipedii</p>
 <a href="https://cs.wikipedia.org/wiki/Perlorodka_%C5%99%C3%AD%C4%8Dn%C3%AD"><img src="pictures/hokej.jpg" alt="winners2024" style="width:620px;height:360px" target="_blank" ></a>
   <pre> &lta href="link na nové místo"&gt&lt src="zdroj" alt="alternativní název"&gt&lt/a&gt</pre>
-  
+
+  <h3>IFRAME</h3>
+  <p>Iframe slouží k vložení stránek a další dva slouží k vložení externích zdrojů (pdf soubory), ale s rychlejším internetem se člověk s nimi již moc nesetká<br>
+  V době pluginů (Flash, Java Applets), které umožňovali programátorům vložit větší obsah, který nebyl dostupný za pomoci html pouze, zapojení těchto technologií bylo provedeno za pomocí object a embed elementů, ale ty se dneš již nepoužívají<br>
+  pomocí iframe lze vložit stránky, videa z youtube nebo mapy</p>
+  <iframe src="https://cs.wikipedia.org/wiki/Hlavn%C3%AD_strana" style="border:none; height:400px; width:600px;" name="iframe_a" title="ALBERT" allowfullscreen></iframe>
 </body>
 </html>
