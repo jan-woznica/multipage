@@ -516,7 +516,6 @@ formaction="/action..." - použití při image nebo submit </pre>
   &ltinput type="range" id="vol" name="vol" min="0" max="100"&gt
 &lt/form&gt
  </pre>
-
 <form autocomplete="on">
  <h4>EMAIL, ČÍSLO V ROZMĚZÍ, KÓD ZEMĚ, TELEFON, PLACEHOLDER, PASSWORD A OBRÁZEK JAKO SUBMIT</h4>
   <label for="mail">Mail:</label>
@@ -540,7 +539,52 @@ formaction="/action..." - použití při image nebo submit </pre>
   pattern="[A-Za-z]" - předem nastavený styl vyplnění pole
   step="2" - po kolika má hodnota růst
 
-  
+&ltform autocomplete="on"&gt
+  &ltlabel for="mail"&gtMail:&lt/label&gt
+  &ltinput type="email" id="email" name="email"&gt
+  &ltlabel for="quantity"&gtMnožství/věk (mezi 18 až 81):&lt/label&gt
+  &ltinput type="number" id="quantity" name="quantity" min="18" max="81" step="2"&gt
+  &ltlabel for="country_code"&gtZemě původu:&lt/label&gt
+  &ltinput type="text" id="country_code" name="country_code" pattern="[A-Za-z]{3}" title="Zkratka země na 3"&gt
+  &ltlabel for="phone"&ltTelefon:&lt/label&gt
+  &ltinput type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"&gt
+  &ltsmall&gtFormat: 123-45-678&lt/small&gt
+  &ltlabel for="pwd"&gtPassword:&lt/label&gt
+  &ltinput type="password" id="pwd" name="pwd"&gt
+  &ltinput type="image" src="favicon.ico" alt="Potvrdit" width="48" height="48"&gt
+&lt/form&lt
  </pre>
+ <form>
+  <h2>Readonly, disabled a Hidden & size a maxlength, URL, HLEDÁNÍ</h2>
+  <label for="sname">Neměnné příjmení:</label>
+  <input type="text" id="sname" name="sname" value="Woznica" size="15" readonly><br><br>
+  <label for="mname">Jméno2:</label>
+  <input type="text" id="mname" name="sname" value="Není" size="10" maxlength="9" disabled><br>
+  <input type="hidden" id="custId" name="custId" value="14">
+  <label for=gsearch">Hledání Google:</label>
+  <input type="search" id="gsearch" name="gsearch"><br>
+  <label for="homepage">vlož URL:</label>
+  <input type="url" id="homepage" name="homepage">
+</form>
+  <pre>
+   readonly - na pole jde kliknout a bude odesláno po submit, ale nebude vyplněno
+   disabled - na poole nejde kliknout, ale je vidět
+   hidden - pole není ani vidět
+   size - kolik znaků se vejdo do pole, aby je šlo vidět
+   maxlenght - kolik znaků lze najednou napsat do pole
+   url
+   hledání
+&ltform&gt
+  &ltlabel for="sname"&gtNeměnné příjmení:&lt/label&gt
+  &ltinput type="text" id="sname" name="sname" value="Woznica" size="15" readonly&gt
+  &ltlabel for="mname"&gtJméno2:&lt/label&gt
+  &ltinput type="text" id="mname" name="sname" value="Není" size="10" maxlength="9" disabled&gt
+  &ltinput type="hidden" id="custId" name="custId" value="14"&gt
+  &ltlabel for=gsearch"&gtHledání Google:&lt/label&gt
+  &ltinput type="search" id="gsearch" name="gsearch"&gt
+  &ltlabel for="homepage"&gtvlož URL:&lt/label&gt
+  &ltinput type="url" id="homepage" name="homepage"&gt
+&lt/form&gt
+  </pre>
 </body>
 </html>
