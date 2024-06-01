@@ -727,7 +727,16 @@ vhodné pro graficky intenzivní hry</pre>
 Prohlížeč hudbu nepodporuje
 </audio>
 <h4>PLUG-INS</h4>
- 
+<p>Navrženy pro vkládání zásuvných modulů, ale lze k zahrnutí html do html nebo obrázků</p>
+<h4>WEB STORAGE API</h4>
+ <pre>
+ data se udržují vně uživatelevo vyhledávače, před html5 se data držela pomocí cookies
+  storage je větší (min 5MB) a informace není transfernuta do serveru
+  Web storage je per origin (per domain and protocol) Stránky od jednoho zdroje mohou uchovávat a přistupovat k těmto datům
+  Dva typy web storage:
+  window.localStorage - data bez expirace
+  window.sessionstorage - data na jeden session (ztraceno po zavření záložky
+ </pre>
 <footer>
  <p>toto je footer</p>
 </footer>
