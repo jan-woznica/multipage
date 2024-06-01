@@ -686,8 +686,47 @@ vhodné pro graficky intenzivní hry</pre>
   <text fill="#ffffff" font-size="40" font-family="Verdana" x="30" y="86">Wozni</text>
   Sorry, your browser does not support inline SVG.
 </svg>
- <h3>WEBGL</h3>
- <p>WebGL Api návod umožní 3D grafiku</p>
+ <h3>MULTIMEDIA</h3>
+ <pre>
+  Multimedia maji rozšíření jako wav, mp3, mpg, wmv nebo avi... existuje mnoho formátů
+  MP4, WebM, Ogg je podporováno HTML
+  WebM rozdělí soubor na části, zvuk, video, titulky a ke každé části lze vložit další poddata jako čeština atd...
+  Krom multimédií existuje i mnoho OVPs (online video providrů) jako jsou Youtube, Dailymotion a nebo providři Soundcloud
+ </pre>
+ <h4>VIDEO</h4>
+ <p>První videa a audia byla umožněna plug-in technologiemi jako jsou Flash a Silverlight, ale tyto možnosti měli bezpečnostní hrozby</p>
+ <pre>
+  control - přidává ovládání videa
+  source - vkládat, aby prohlížeč mohl poskytnou první dobrý formát
+  autoplay - automaticky se zapne po načtení stránky
+  muted - bude potichu a často autoplay bez toho nejde
+  loop - bude hrát ve smyčce
+  preload="auto" vyrovnání velkých souborů
+  poster - obrázek před spuštěním - často se užívá reklama
+  Pro nastavení více přehrávačů videí je zapotřebí zahrnout type jinak prohlížeč bude zkoušet všechny soubory, dokud jeden nebude fungovat
+  &ltsource src="..." type="video/mp4"&gt
+  &ltsource src="..." type="video/ogg"&gt
+ </pre>
+<video src="https://www.youtube.com/watch?v=wOLNou1OJRw" controls>
+  <p> Prohlížeš nepodporuje video, tady je <a href="https://www.youtube.com/watch?v=wOLNou1OJRw">link</a>.</p>
+</video>
+<pre>
+ track element a WebVTT soubor nastaví titulky, navíc track pomáhá se SEO
+ WebVTT je formát psaná textových souborů obsahujích několik stringů s metadaty jako jaký text v jaký čas hrát
+ tyto stringy jsou:
+ subtitles - titulky
+ captions - titulky + popis situací 
+ times descriptions - text, který čte přehrávač pro slepé lidi
+ mělo by to vypadat nějak takto: 1  00:00:22.230 --> 00:00:24.606  This is the first subtitle...
+</pre>
+ <h4>AUDIO</h4>
+<p>Audio funguje stejně jako video, ale s pár změnami</p>
+ <audio controls autoplay muted>
+  <source src="..." type="audio/ogg">
+  <source src="..." type="audio/mpeg">
+Prohlížeč hudbu nepodporuje
+</audio>
+<h4>PLUG-INS</h4>
  
 <footer>
  <p>toto je footer</p>
