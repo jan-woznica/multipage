@@ -11,6 +11,7 @@
 </head>
 <body>
 <h1>Tato stránka bude věnována HTML základům</h1> 
+<p>látka, kterou jsem sem septal je naučena z W3school a mdn web docs</p>
   
 <a href="index.html">HOME</a>
 <a href="itbasics.html">IT základy</a>
@@ -586,6 +587,110 @@ formaction="/action..." - použití při image nebo submit </pre>
   &ltinput type="url" id="homepage" name="homepage"&gt
 &lt/form&gt
   </pre>
+<h3>JAVASCRIPTS</h3>
+ <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Klikni pro zobrazení data a času</button>
+<p id="demo"></p>
+<p id="demo_a"></p>
+<script>
+document.getElementById("demo_a").innerHTML = "Tohle napsal JavaSript!";
+</script>
+<noscript>Sorry, nepodporuješ Javu</noscript>
+<pre>
+ &ltscript&gt vyjadřuje Javascript a noscript, pokud prohlížeš nepodporuje javu
+ Více se budu věnovat javě na samostatné stránce, ale tady je tlačítko, které mi ukáže aktuální datum a čas.
+</pre>
+ <div class="kontejner">
  <h3>KONTEJNERY</h3>
+ <pre>
+  &ltdiv&gt slouží jako container pro jiné html elementy a zabýrá celý řádek (přidává line break před a po
+  display:"inline-block/float (zařadí vedle sebe/flex a grid se využívají hlavně
+  class="" slouží k pojmenování elementů, kde víc elementů může nést stejný název v head propojujeme .název s v těle název
+ </pre>
+ </div>
+<h3>SEMANTICKÉ ELEMENTY</h3>
+ <pre>
+ &ltsection&gt- seskupuje například kapitoly a vysvětlivky a novinky nebo kontaktní informace (slouží k seskupování)
+ &ltarticle&gt - nezávislý na section (článek, komentář, úryvek), používáme classy (uzavírá blok, který může existovat sám o sobě
+ když nelze použít section nebo article, tak používáme &ltdiv&gt a &ltspan&gt spolu s atributem class
+ </pre>
+ 
+ <section>
+    <ul>
+      <li>TEXT</li>
+    </ul>
+  <article>
+    <p>tohle je text v article</p>
+  </article>
+</section>
+ 
+<h3>LAYOUTY</h3>
+<pre>
+ Rychlé layouty jsou tvořeny pomocí css frameworků jako w3.css nebo bootstrap
+ HTML obsahuje několik block level elementů: header, navigation menu, main content column, atd.
+ header - vrchní pruh s logem a zůstává stejný napříč stránkami
+ navigation bar - obsahuje odkazy na části stránky
+ sidebar - info, odkazy, citace, reklamy
+ footer - spodek stránky a obsahuje copyright, kontatky, často slouží jako SEO
+ css layoutů:
+ float - většinou
+ flexbox - pro různé obrazovky
+ grid - řady a sloupce
+</pre>
+<p>Aside funguje jako sidebar</p>
+<aside style="float:left;margin-left:15 px";>
+<p> SIDEBAR</p>
+</aside>
+<pre>
+ &ltaside style="float:left;margin-left:15 px";&gt
+&ltp&gt SIDEBAR&lt/p&gt
+&lt/aside&gt
+</pre>
+<h3>GRAFIKA PRO WEB</h3>
+ <pre>
+  grafika pro web je W3C doporučení - Canva s Javou, SVG s XML
+   Na internetu pracujeme s dvěma typy obrázků:
+ raster images - definovány mřížkou pixelů a souborem s obrázkem obsahujícím informaci, kde každý pixel má být vložen
+ vector images - definovány užitím algoritmů
+ </pre>
+<h4>CANVA</h4>
+<pre>Canvas elementy zprostředkují APIs pro kreslení 2D grafik za použití Javascriptu
+V Canvas jakmile je nakresleno, tak je ihned zapomenuto
+Žádné handlery, lze uložit jako png nebo jpg
+vhodné pro graficky intenzivní hry</pre>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+<h4>SVG</h4>
+<p>Scalable Vector based graphics in XML format</p>
+<pre>
+ SVG umožňuje použití linek a geometrických tvarů pro 2D grafiku
+ SVG je vhodné, protože má malou velikost a je vysoce škálovatelné (nepixeluje se při přiblížení)
+ V SVG je vše nakresleno a pamatováno jako objekt
+ Resolution independent , handlery, velké aplikace, pomalejší
+ Nevhodné pro hry
+ Jednoduché designy lze v editoru, ale jinak využít Inkscape nebo Illustrator, které umožňují nespočet ilustrací
+ Text zůstává dostupný pro SEO a lze je lehce stylovat a scriptovat, ale jsou komplikované, pomalejší
+</pre>
+<pre>
+ SVG vložit na stránku buď:
+ vložením img elementu - lze i link 
+ inline svg - rychlejší 
+ iframe - nedoporučuje se
+</pre>
+ <svg height="130" width="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="40" font-family="Verdana" x="30" y="86">Wozni</text>
+  Sorry, your browser does not support inline SVG.
+</svg>
+ <h3>WEBGL</h3>
+ <p>WebGL Api návod umožní 3D grafiku</p>
+ 
+<footer>
+ <p>toto je footer</p>
+</footer>
 </body>
 </html>
