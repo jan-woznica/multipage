@@ -298,13 +298,36 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
 &lt/dl&gt
     </pre>
   <h3>FORMULÁŘE</h3>
+ <p>i když to teď nebude ukázáno, tak formuláře mají formhandlery, které jsou specifikovány ve form action a typicky se jedná o server se scriptem, když je action přeskočen, tak je výsledek poslán na současnou stránku<br>
+ &lttarget&gt - říká kde zobrazit data nebo lze použít &ltsubmit&gt nebo image &ltformtarget&gt</p>
+    </pre>
+    &lttarget&gt hodnoty: 
+   &lttarget="_blank" (nové okno)
+   &lttarget="_self" (aktuální okno)
+   &lttarget="_parent" (otevře v parent framu)
+   &lttarget="_top" (otevře v celém okně)
+   &lttarget="framename" (v jmenovaném iframe)
+  </pre>
+<p>method specifikuje HTTP metodu</p>
+<pre>U buttonu lze použít formmethod="p.."
+get (v URL proměnné, limit 2048 znaků, lze bookmark, query stringy v googlu)
+post (post transaction, pro citlivá data, bez limitu, nemůže být bookmarknuto)
+formenctype="multipart/form-data" - spojené s post a submit nebo image. mění endcoding <br>
+autocomplete - pokud již uživatel vyplňoval hodnoty, tak je nabídne znovu <br>
+novalidate - input data nemají být oveřena u button nebo image lze použít formnovalidate <br>
+action="/action_page.php" target="" method="" autocomplete="" novalidate> <br>
+formaction="/action..." - použití při image nebo submit </pre>
+    
+
   <form>
-    <h4>Text Input</h4>
+    <h4>Text Input A SUBMIT BUTTON</h4>
     <p>Formulář umožní vložení textu</p>
     <label for="jmeno">Jméno:</label><br>
     <input type="text" id="jmeno" name="jmeno"><br>
     <label for="prijmeni">Příjmení:</label><br>
     <input type="text" id="prijmeni" name="prijmeni">
+    <input type="submit" value="Submit">
+    <input type="button" onclick="alert('Miluji Barušku!')" value="Potvrdit">
   </form>
   <pre>
    Label je název pole  a input je aktuální pole
@@ -315,7 +338,6 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
     &ltinput type="text" id="prijmeni" name="prijmeni"&gt
   &lt/form>
   </pre>
-
  <form>
   <h4>RADIO - VÝBĚR JEDNÉ Z MOŽNOSTÍ</h4>
   <input type="radio" id="html" name="jazyk" value="HTML">
