@@ -202,7 +202,7 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
   <h3>TABULKA</h3>
 <p>Dříve se tabulka využívala na stylování stránky, ale teď již to je nevhodné</p>
 <pre>
-&lttd&gt (table data) označuje buňky, lttr&gt (table row) slouží k psaní dalšího řádku, &ltth&gt (table header) je název, th jsou defaultně bold a nastavené na střed
+&lttd&gt (table data) označuje buňky, &lttr&gt (table row) slouží k psaní dalšího řádku, &ltth&gt (table header) je název, th jsou defaultně bold a nastavené na střed
 &ltscope&gt se přidává do th, aby řekl screanreaderům na co je header, úplně nejjednodušší možnost je &ltscope="col"td označuje buňky data tabulky<br>
 &ltrowspan&gt na více řádků a &ltcolspan&gt na sloupce
 &ltcolgroup&gt slouží ke stylování pro celý sloupec a &ltspan&gt říká počet slupců, lze nastavit border, background, width a visibility</pre>
@@ -216,7 +216,15 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
   </colgroup>
   <tr>
     <th>Pozice</th>
+    <th colspan="3">Zaměstnanec</th>
+    <th colspan="2">Koníček</th>
   </tr>
+  <th>Jméno</th>
+  <td>Jan</td>
+  <td>Ondřej</td>
+  <td>Ivan</td>
+  <td>Míša</td>
+  <td>Monika</td>
 </table>
 </body>
 </html>
