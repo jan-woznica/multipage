@@ -300,10 +300,59 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
   <h3>FORMULÁŘE</h3>
   <form>
     <h4>Text Input</h4>
+    <p>Formulář umožní vložení textu</p>
     <label for="jmeno">Jméno:</label><br>
     <input type="text" id="jmeno" name="jmeno"><br>
     <label for="prijmeni">Příjmení:</label><br>
     <input type="text" id="prijmeni" name="prijmeni">
   </form>
+  <pre>
+   Label je název pole  a input je aktuální pole
+  &ltform&gt
+    &ltlabel for="jmeno"&gtJméno:&lt/label&gt
+    &ltinput type="text" id="jmeno" name="jmeno"&gt
+    &ltlabel for="prijmeni"&gtPříjmení:&lt/label&gt
+    &ltinput type="text" id="prijmeni" name="prijmeni"&gt
+  &lt/form>
+  </pre>
+
+ <form>
+  <h4>RADIO - VÝBĚR JEDNÉ Z MOŽNOSTÍ</h4>
+  <input type="radio" id="html" name="jazyk" value="HTML">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="jazyk" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="java" name="jazyk" value="JavaScript">
+  <label for="java">JavaScript</label>
+</form>
+ <pre>
+&ltform&gt
+  &ltinput type="radio" id="html" name="jazyk" value="HTML"&gt
+  &ltlabel for="html"&gtHTML&lt/label&gt
+  &ltinput type="radio" id="css" name="jazyk" value="CSS"&gt
+  &ltlabel for="css"&gtCSS&lt/label&gt
+  &ltinput type="radio" id="java" name="jazyk" value="JavaScript"&gt
+  &ltlabel for="java"&gtJavaScript&lt/label&gt
+&lt/form&gt
+ </pre>
+<form>
+  <h4>CHECKBOX - VÝBĚR VÍCE MOŽNOSTÍ</h4>
+  <input type="checkbox" id="vozidlo1" name="vozidlo1" value="Kolo">
+  <label for="vozidlo1"> Mám kolo</label><br>
+  <input type="checkbox" id="vozidlo2" name="vozidlo2" value="Auto">
+  <label for="vozidlo2"> Mám auto</label><br>
+  <input type="checkbox" id="vozidlo3" name="vozidlo3" value="Loď">
+  <label for="vozidlo3"> Mám loď</label>
+</form> 
+ <pre>
+&ltform&gt
+  &ltinput type="checkbox" id="vozidlo" name="vozidlo1" value="Kolo"&gt
+  &ltlabel for="vozidlo1"&gtMám Kolo&lt/label&gt
+  &ltinput type="checkbox" id="vozidlo2" name="vozidlo2" value="Auto"&gt
+  &ltlabel for="vozidlo2"&gtMám auto&lt/label&gt
+  &ltinput type="checkbox" id="vozidlo3" name="vozidlo3" value="Loď"&gt
+  &ltlabel for="vozidlo3"&gtMám loď&lt/label&gt
+&lt/form&gt
+ </pre>
 </body>
 </html>
