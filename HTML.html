@@ -243,5 +243,28 @@ Style nastaví šířku a výšku obrázku, usemap a map name nám propojuje obr
   </tr>
 </table>
   <h3>LISTY</h3>
+<p>Existují tři typy listů: unordered, ordered a description a lze je vzájemně nestovat</p>
+<h4>UNORDERED LIST</h4>
+  <p>listy mohou mít marker </p>
+  <ul style="list-style-type:disc;">
+    <li>Basket</li>
+    <li>Hokej
+      <ul>
+        <li>Hokej hraji od 3 let</li>
+        <li>Nyní ho hraji již rekreačně</li>
+      </ul>
+    </li>
+    <li>Fotbal</li>
+    <pre>Kód listu:
+        &ltul style="list-style-type:disc/circle/square/none;"&gt
+    &ltli&gtBasket&lt/li&gt
+    &ltli&gtHokej
+      &ltul&gt
+        &ltli&gtHokej hraji od 3 let&lt/li&gt
+        &ltli&gtNyní ho hraji již rekreačně&lt/li&gt
+      &lt/ul&gt
+    &lt/li&gt
+    &ltli&gtFotbal&lt/li&gt
+    </pre>
 </body>
 </html>
