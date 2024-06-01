@@ -447,7 +447,7 @@ formaction="/action..." - použití při image nebo submit </pre>
  <pre>
   fieldset ohraničí formulář a legend dá tomu název
   reset tlačítko vyresetuje všechna pole
-
+  
    &ltform&gt
   &ltfieldset&gt
     &ltlegend>Osoba:&lt/legend&gt
@@ -468,7 +468,7 @@ formaction="/action..." - použití při image nebo submit </pre>
    &lt/form&gt
  </pre>
  <form>
-  <h4>DATALIST A </h4>
+  <h4>DATALIST </h4>
   <input list="jména">
   <datalist id="jména">
     <option value="Baruška">
@@ -490,7 +490,19 @@ formaction="/action..." - použití při image nebo submit </pre>
   &l/datalist&gt
 &l/form&gt
 </pre>
-
+ 
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  <h4>OUTPUT</h4>
+  0
+  <input type="range" id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+  <br><br>
+  <label for="vol">Hlasitost (0-100):</label>
+  <input type="range" id="vol" name="vol" min="0" max="100">
+</form>
  
 </body>
 </html>
