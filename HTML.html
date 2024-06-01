@@ -323,17 +323,18 @@ formaction="/action..." - použití při image nebo submit </pre>
     <h4>Text Input, SUBMIT A BUTTON</h4>
     <p>Formulář umožní vložení textu</p>
     <label for="jmeno">Jméno:</label><br>
-    <input type="text" id="jmeno" name="jmeno"><br>
+    <input type="text" id="jmeno" name="jmeno" value="Jan"><br>
     <label for="prijmeni">Příjmení:</label><br>
     <input type="text" id="prijmeni" name="prijmeni">
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit"><BR>
     <input type="button" onclick="alert('Miluji Barušku!')" value="Potvrdit">
   </form>
   <pre>
    Label je název pole  a input je aktuální pole
+   value vloží předem hodnotu do inputu
   &ltform&gt
     &ltlabel for="jmeno"&gtJméno:&lt/label&gt
-    &ltinput type="text" id="jmeno" name="jmeno"&gt
+    &ltinput type="text" id="jmeno" name="jmeno" value="Jan"&gt
     &ltlabel for="prijmeni"&gtPříjmení:&lt/label&gt
     &ltinput type="text" id="prijmeni" name="prijmeni"&gt
     &ltinput type="submit" value="Submit"&gt
@@ -417,7 +418,79 @@ formaction="/action..." - použití při image nebo submit </pre>
   <input type="file" id="myfile" name="myfile"<br>
   <input type="submit">
 </form>
-
+<pre>
+ &ltform&gt
+  &lttextarea name="message" rows="5" cols"10">Sem vepište text.&lt/textarea&gt
+  &lttextarea name="message" style="width:200px; height:150px;">Sem vepište text.&lt/textarea&gt
+  &ltlabel for="myfile">Vybrat soubor:&lt/label&gt
+  &ltinput type="file" id="myfile" name="myfile"&gt
+  &ltinput type="submit"&gt
+&lt/form&gt
+</pre>
+ <form>
+  <h2>FIELD SET, LEGEND, DATUMY S PODMÍNKAMI A RESET BUTTON</h2>
+  <fieldset>
+    <legend>Osoba:</legend>
+    <label for="datemin">Starší 18:</label>
+    <input type="date" id="datemin" name="datemin" min="2005-01-02"><br>
+    <label for="datamax">Mladší 18:</label>
+    <input type="date" id="datemax" name="datemax" max="2023-01-01" value="2020-02-02"><br>
+    <label for="birthandtime">Date and time:</label>
+    <input type="datetime-local" id=birthandtime" name="birthandtime" value="2020-02-02 14:30"><br>
+    <label for="bdaymonth">Birthday (měsíc a rok):</label>
+    <input type="month" id="bdaymonth" name="bdaymonth"><br>
+    <label for="week">Select a week:</label>
+    <input type="week" id="week" name="week":><br>
+    <label for="appt">Vyberte čas:</label>
+    <input type="time" id="appt" name="appt"><br>
+    <input type="reset" value="reset">
+</form>
  
+ <pre>
+  fieldset ohraničí formulář a legend dá tomu název
+  reset tlačítko vyresetuje všechna pole
+
+   &ltform&gt
+  &ltfieldset&gt
+    &ltlegend>Osoba:&lt/legend&gt
+    &ltlabel for="datemin"&gtStarší 18:&lt/label&gt
+    &ltinput type="date" id="datemin" name="datemin" min="2005-01-02"&gt
+    &ltlabel for="datamax"&gtMladší 18:&lt/label&gt
+    &ltinput type="date" id="datemax" name="datemax" max="2023-01-01" value="2020-02-02"&gt
+    &ltlabel for="birthandtime"&gtDate and time:&lt/label&gt
+    &ltinput type="datetime-local" id=birthandtime" name="birthandtime" value="2020-02-02 14:30"&gt
+    &ltlabel for="bdaymonth"&gtBirthday (měsíc a rok):&lt/label&gt
+    &ltinput type="month" id="bdaymonth" name="bdaymonth"&gt
+    &ltlabel for="week"&gtSelect a week:&lt/label&gt
+    &ltinput type="week" id="week" name="week":&gt
+    &ltlabel for="appt"&gtVyberte čas:&lt/label&gt
+    &ltinput type="time" id="appt" name="appt"&gt
+    &ltinput type="reset" value="reset"&gt
+  &lt/fieldset&gt
+   &lt/form&gt
+ </pre>
+ <form>
+  <h4>DATALIST</h4>
+  <input list="jména">
+  <datalist id="jména">
+    <option value="Baruška">
+    <option value="Jenda">
+    <option value="Laura">
+    <option value="Bella">
+    <option value="Pepr">
+  </datalist>
+</form>
+<pre>
+  &ltform&gt
+  &linput list="jména"&gt
+  &ldatalist id="jména"&gt
+    &loption value="Baruška"&gt
+    &loption value="Jenda"&gt
+    &loption value="Laura"&gt
+    &loption value="Bella"&gt
+    &loption value="Pepr"&gt
+  &l/datalist&gt
+&l/form&gt
+</pre>
 </body>
 </html>
