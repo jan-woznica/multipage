@@ -1,18 +1,49 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CSS základy">
+  <meta name="keywords" content="CSS, základy">
+  <meta name="author" content="Jan Woznica">
   <title>Jan Woznica</title>
 </head>
 <body>
-<h1>Tuto stránku věnuji CSS</h1>
-<a href="index.html">HOME</a>
-<a href="itbasics.html">IT základy</a>
-<a href="HTML.html">HTML</a>
-<a href="CSS.html">CSS</a>
-<a href="JavaScript.html">JavaScript</a>
-<a href="git.html">Git</a>
-<a href="cmd.html">Command line</a>
+<h1>Tato stránka je věnována CSS základům</h1>
+<p>Látka, kterou jsem sem sepsal, je naučena z w3school a mdn web docs</p>
+<nav>
+  <ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="itbasics.html">IT základy</a></li>
+<li><a href="HTML.html">HTML</a></li>
+<li><a href="CSS.html">CSS</a></li>
+<li><a href="JavaScript.html">JavaScript</a></li>
+<li><a href="git.html">Git</a></li>
+<li><a href="cmd.html">Command line</a></li>
+  </ul>
+</nav>
+<h2>Co je to CSS</h2>
+<p>CSS neboli Cascading style sheet slouží k vytváření dobře vypadajících stránek. CSS tedy slouží k nastavení vzhledu html a xml souborů.<br>
+CSS bylo vytvořeno s myšlenkou, že bude pro všechny zdarma.<br>
+Pro programátory se může CSS jevit jakožto podivný jazyk, protože funguje jinak než většina. Hlavním důvodem je, že nemá vliv na velikost displeje a proto jenom navrhuje vzjled, ale prohlížeč má finální slovo.<br>
+Všechny webové technologie mají takzvané specifikace (specs), které jsou vydány standartními organizacemi (WHATWG, ECMA, Khronos, W3C) a definují, jak se tyto technologie mají chovat
+Samotné HTML v prohlížeči se nazývá user agent (UA)</p>
+<pre>CSS soubory ukládáme s příponou .css
+CSS komentáře píšeme /2B51 uvnitř komentáře 	2B51/</pre>
+
+<h2>CSS v &lthead&gt</h2>
+<p>
+  
+</p>
+<pre>Při psaní CSS začínáme selektorem (h1, p atd...) po selektoru jsou závorky a v nich pravidla např: {height: 100px;}
+Selektory mohou být elementy h1, p nebo classy s tečkou .navigation .header nebo jedinečné id #header #row (id lze využít pouze jednou
+* selektor označuje celý html soubor
+krom toho odkazujeme v hlavě na externí stylesheety &ltlink rel="stylesheet" href="mystyle.css"&gt
+Později zmíněné stylesheety budou vykresleny později
+</pre>
+
+<h2>Kombinátory</h2>
+<p>Kombinátory označují, jak voláme selektory. Selektory můžeme volat jeden nebo i více</p>
+<pre>Pro volání více selektorů najednou musíme přidat mezeru</pre>
 </body>
 </html>
