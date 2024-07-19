@@ -121,9 +121,48 @@ Dále můžeme resetovat hodnoty pomocí all, který nastaví skoro všechny ele
 <h2>Barvy</h2>
 <p>barvu lze nastavit u pozadí, textu, ohraničení atd...</p>
 <pre>Hodnoty:
-RGB
+RGB - red, green, blue
+každá hodnota má 0 - 255 podle intenzity, kde 0 je černá a šedá vzniká nastavením všech hodnot stejně.
+style="background-color:rgb(255, 99, 71);"
+
+HEX  - #rrggbb - red, green, blue
+každá hodnota má 00 - ff, ale lze potkat i zkrácenou verzi číšel 
+
+HUE - specifikujeme hue v &ltangle&gt
+rozdíly mezi barvami jako jsou červená, oranžová, zelená atd...
+hwb() funkce využívá hue v srbg() barvě, de se využívá hue 0-360, whiteness 0%-100% a blackness 0%-100%
+
+HSL - hue, saturation, lightness
+kde hodnoty hue 0-360, saturation a lightness 0%-100%
+
+RGBA - stejné jako RGB + A jako alpha
+Alpha znaměná transparentnost a nabývá hodnot 0-1
+
+HSLA - stejné jako HSL + A jako alpha
+Alpha znaměná transparentnost a nabývá hodnot 0-1
+
+Klíčové znaky barev: transparent - nastavuje transparentnost, currentcolor - nastaví současnou barvu, inherit - zdědí barvu od rodiče</pre>
+<h2>Pozadí</h2>
+<p>Jednoduchá pozadí obsahují obrázky<br>
+obrázek se nezmenšuje do menších tvarů, ale do větších tvarů bude vložen vícekrát<br>
+Opakování některých obrázků nemusí vypadat hezky</p>
+<pre>background-repeat: repeat -x/-y nebo no-repeat - opakování obrázku na ose nebo vůbec
+Attachment - má být obrázek fixní, scrollovatelný nebo local (fixnuté k elementu, když scrolluji element, obrázek jde taky
+background-image nastavuje pozadí:
+Syntax: style="background-image: url('https://mostectilvi.esports.cz/foto/logo-ML2-velky.png');"
+background-position: (0,0)/top/center nastavuje pozici obrázku
+background-clip - obrázek zůstane uvnitř elementu
+border-radius - zaoblení rohů
+box-shadow - nastavuje stín
+background-color - barva až k border a lze ji nastavit pomocí RGB, HSL, HEX, ale také opacity, ale to vezme text i barvu
+background-origin - poloha obrázku: border-box - v levém rohuzačátek obrázku / padding-box - v levém rohu od padding boxu / content-box - vlevém rohu od kontentu
+background-size - velikost obrázku: px / contain-max maximální velikost, ale ne přes okraje / cover ke všem okrajům / %
+  
+background je shorthand verze pro: color, image, repeat a position:
+Syntax: background: #ffffff url("img_tree.png") no-repeat center fixed, background-site: cover
+
+Pomocí background-image lze vložit více pozadí a lze i shorthand property</pre>
 
   
-</pre>
 </body>
 </html>
