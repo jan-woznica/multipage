@@ -27,14 +27,39 @@
 CSS bylo vytvořeno s myšlenkou, že bude pro všechny zdarma.<br>
 Pro programátory se může CSS jevit jakožto podivný jazyk, protože funguje jinak než většina. Hlavním důvodem je, že nemá vliv na velikost displeje a proto jenom navrhuje vzjled, ale prohlížeč má finální slovo.<br>
 Všechny webové technologie mají takzvané specifikace (specs), které jsou vydány standartními organizacemi (WHATWG, ECMA, Khronos, W3C) a definují, jak se tyto technologie mají chovat
-Samotné HTML v prohlížeči se nazývá user agent (UA)</p>
-<pre>CSS soubory ukládáme s příponou .css
-CSS komentáře píšeme /2B51 uvnitř komentáře 	2B51/</pre>
+Prohlížeč načte HTML soubor, který získá ze sítě, poté konvertuje HTML do DOM (Document Object Model). DOM representuje dokument v paměti počítače. Prohlížeč přinese většinu zdrojů, které jsou linknuty (obrázky, videa, CSS) k HTML dokumentu. Prohlížeč rozebere css na jednotlivá pravidla a páruje tyto pravidla s DOM (tento krok se nazývá Render tree). Render tree je položen ve struktuře. Výsledný vzhled stránky je ukázán na obrazovce (tento krok nazýváme painting).
+Samotné HTML v prohlížeči se nazývá user agent (UA), user je návštěvník</p>
+CSS je rule-based language - nastavujeme pravidlo pro specifické skupiny, ale když napíšeme pravidlo špatně, tak ho bude ignorovat
+Máme tři možnosti, jak aplikovat CSS: external- pomocí stylesheety v samostatném css, internal - stylesheet uvnitř html dokumentu v části &lthead&gt/inline - pomocí style v konkrétním elementu
+<pre>Externí: &ltlink rel="stylesheet" href="style.css"&gt
+CSS soubory ukládáme s příponou .css
+CSS komentáře píšeme /2B51 uvnitř komentáře 2B51/</pre>
 
-<h2>CSS v &lthead&gt</h2>
-<p>
+<h2>Cascading Koncept</h2>
+<p>Hodnocení důležitosti CSS se dá rozdělit na 7 kroků</p>
+<pre>1. Nalezení všech bloků ovlivňující jeden element
+2. Rozdělení pravidel na !important a normal
+3. Rozdělení podle zdroje: autor, user, user-agent origin
+4. Cascade layers: vytvoření 6ti kýblů důležitosti (postupně): user-agent normal style, user normal style, autor normal style, style being animated, autor important styles, user, important style, user-agent important styles, style being transitioned
+5. Specifičnost spolubojujích stylů
+6. Scoping: nastavení hodnoty @scope
+7. Cascading: naposledy deklarovaný vyhrává
+</pre>
+<p>Cascade layers zjednodušují udržení stylesheetu a umožňují větší kontrolu nad CSS deklaracemi v případě hodně specifik nastavím úrovní<br>
+Cascade layer vytvoří sub-origin úroveň priority uvnitř jakéhokoliv originu ze všech 6 typů důležitosti a uvnitř každé úrovně vytvoření několika cascade layerů, kde záleží na jejich pořadí <br>
+Layered sheet má menší váhu než unlayered sheet <br>
+Každý layer může obsahovat nested layers - může být využito v media queries nebo podle velikosti obrazovky</p>
+<pre>Vytváření layers:
+@layer následováno jménem - vytvoří layer bez přiřazení jakýchkoliv stylů
+@layer v bloku - všechny styly v bloku jsou přidány do layer i pokud layer s daným jménem neexistuje
+@import layer nebo layer() přiřadí obsah importovaného souboru do daného layeru. Je potřeba, aby @import byl dříve než style daného stylesheetu - vždy je lepší použít layer uvnitř stylesheetun než importovat stylesheet
+@import url("stylesheet.css") layer(layer1); (layer1.layer2) - layer2 je nestuntý uvnitř layer1
+Layer a media queries: pokud propojím layer s media queries a velikost nesouhlasí, tak layer nebude vytvořen: @media (min-width:30 em) {@layer site;}
+
+</pre>
+<p>Do nepojmenovaných layerů jdou vložit styly pouze při vytváření layeru</p>
   
-</p>
+<h2>CSS v &lthead&gt</h2>
 <pre>Při psaní CSS začínáme selektorem (h1, p atd...) po selektoru jsou závorky a v nich pravidla např: {height: 100px;}
 Selektory mohou být elementy h1, p nebo classy s tečkou .navigation .header nebo jedinečné id #header #row (id lze využít pouze jednou
 * selektor označuje celý html soubor
@@ -42,8 +67,21 @@ krom toho odkazujeme v hlavě na externí stylesheety &ltlink rel="stylesheet" h
 Později zmíněné stylesheety budou vykresleny později
 </pre>
 
-<h2>Kombinátory</h2>
-<p>Kombinátory označují, jak voláme selektory. Selektory můžeme volat jeden nebo i více</p>
-<pre>Pro volání více selektorů najednou musíme přidat mezeru</pre>
+<h2>Selektory</h2>
+<p>Selektor můžeme volat jeden nebo i více</p>
+<pre>Dalším typem selektorů jsou stavové selektory: a:link, a:visited, a:hover
+Pro zaměření více selektorů je stačí oddělit čárkou
+při spojení selektoru s classou (nebo stejných elementů mezerou), tak to vybere jakýkoliv element s tímto názvem, který je uvnitř daného elementu
+h1 + p zaměřuje paragraf, který následuje po nadpisu úrovně h1</pre>
+
+<h2>Výběr selektorů</h2>
+<p>Může se stát, že v jednom dokumentu budeme odkazovat na jeden element vícekrát,
+prvním prvidlem je specifičnost, čím víc jsme specifičtí s pravidlem, tím větší pravděpodobnost, že bude platit (od nejvyšší !important, ID, Class, Element) <br>
+Pokud jsme stejně specificčtí, tak druhým pravidlem je posloupnost (Cascading jako CSS). Pravidla výše v dokumentu (např stylesheet) nebudou aplikována oproti (např inline)<br>
+Často se stává, že elementy zdědí hodnoty od svých parent elementů, pak záleží, jak daleko od něho jsou</p>
+<pre>Nastavení elementu, jak má fungovat s parent elementem:
+inherit - zdědí od parent elementu / Initial - nastaví původní hodnotu vybraného elementu / revert - nastaví browser default / revert-layer - nastaví hodnotu jako v předchozím cascade layeru / unset - mastaví původní hodnotu (takže i na inherit, pokud se jedná o child element) 
+Dále můžeme resetovat hodnoty pomocí all, který nastaví skoro všechny elementy najednou. Hodnota all může být kterákoliv z inheritance hodnot</pre>
+
 </body>
 </html>
