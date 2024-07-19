@@ -55,9 +55,13 @@ Každý layer může obsahovat nested layers - může být využito v media quer
 @import layer nebo layer() přiřadí obsah importovaného souboru do daného layeru. Je potřeba, aby @import byl dříve než style daného stylesheetu - vždy je lepší použít layer uvnitř stylesheetun než importovat stylesheet
 @import url("stylesheet.css") layer(layer1); (layer1.layer2) - layer2 je nestuntý uvnitř layer1
 Layer a media queries: pokud propojím layer s media queries a velikost nesouhlasí, tak layer nebude vytvořen: @media (min-width:30 em) {@layer site;}
-
 </pre>
 <p>Do nepojmenovaných layerů jdou vložit styly pouze při vytváření layeru</p>
+
+<h2>Media Queries</h2>
+<pre>Nastavují pravidla, která platí, při splnění daných podmínek
+Obrazovka větší než 30em, tak modrý text: @media (min-width: 30em) { body {color: blue;}}
+</pre>
   
 <h2>CSS v &lthead&gt</h2>
 <pre>Při psaní CSS začínáme selektorem (h1, p atd...) po selektoru jsou závorky a v nich pravidla např: {height: 100px;}
@@ -66,15 +70,46 @@ Selektory mohou být elementy h1, p nebo classy s tečkou .navigation .header ne
 krom toho odkazujeme v hlavě na externí stylesheety &ltlink rel="stylesheet" href="mystyle.css"&gt
 Později zmíněné stylesheety budou vykresleny později
 </pre>
-
+  
 <h2>Selektory</h2>
-<p>Selektor můžeme volat jeden nebo i více</p>
-<pre>Dalším typem selektorů jsou stavové selektory: a:link, a:visited, a:hover
-Pro zaměření více selektorů je stačí oddělit čárkou
-při spojení selektoru s classou (nebo stejných elementů mezerou), tak to vybere jakýkoliv element s tímto názvem, který je uvnitř daného elementu
-h1 + p zaměřuje paragraf, který následuje po nadpisu úrovně h1</pre>
+<p>Selektory jsou volání jednotlivých elementů. Selektor můžeme volat jeden nebo i více</p> 
+<pre>* {} vybere celý dokument nebo uvnitř rodičovského elementu
+h1 {} označuje všechny &lth1&gt
+.box {} označuje elementy s classou box
+#unique {} označuje konkrétní element s tímto atributem
 
-<h2>Výběr selektorů</h2>
+Dále jsou stavové selektory:
+a[title] označuje všechny elementy s tímto atributem, lze i s konkrétní hodnotou atributu
+a[href="url"] - element s tímto linkem
+p[class~="special"] - element s atributem, který má danou hodnotu
+div[lang|="zh"] - element s atributem, kterého hodnota je nebo začíná danou hodnotou
+
+substring selektory
+li[class^="box-"] - elementy s atributem  jehož hodnota začíná hodnotou
+li[class$="-box"] - element s atributem, jehož hodnota končí hodnotou
+li[class*="box"] - element s atributem, jehož hodnota obsahuje hodnotu uvnitř stringu
+Hodnoty ^ $ se používají již dlouho jako začátek a konec.
+
+Pseudo elementy a classy
+p:hover - myš se nachází přes element / :invalid, :hover, :focus
+p::first-line/child {} - přvní řádek/dítě v daném elementu. V případě child, kdyby tam nebyla mezera, tak by to bylo article, které je first child někde, proto se raději ještě přidává *do mezery
+article > p vybírá paragrafy, které jsou přímé děti article elementu
+</pre>
+
+<h3>Kombinátory</h3>
+<p>Kombinátory kombinují různé selektory</p>
+<pre>
+div, p - všechny div a všechny p
+div p - mezerou mezi dvěma selektory - p univtř div
+div > p - p je přímým potomkem div
+div + p - všechny p, kterou jsou sousední úrovni s div 
+div ~ p - p, které následuje kdekoliv po div
+
+Nesting kombinátorů:
+div p {} může být napsáno jako toto:
+div {& p {}}</pre>
+
+<h3>Výběr selektorů</h3>
 <p>Může se stát, že v jednom dokumentu budeme odkazovat na jeden element vícekrát,
 prvním prvidlem je specifičnost, čím víc jsme specifičtí s pravidlem, tím větší pravděpodobnost, že bude platit (od nejvyšší !important, ID, Class, Element) <br>
 Pokud jsme stejně specificčtí, tak druhým pravidlem je posloupnost (Cascading jako CSS). Pravidla výše v dokumentu (např stylesheet) nebudou aplikována oproti (např inline)<br>
@@ -83,5 +118,12 @@ Pokud jsme stejně specificčtí, tak druhým pravidlem je posloupnost (Cascadin
 inherit - zdědí od parent elementu / Initial - nastaví původní hodnotu vybraného elementu / revert - nastaví browser default / revert-layer - nastaví hodnotu jako v předchozím cascade layeru / unset - mastaví původní hodnotu (takže i na inherit, pokud se jedná o child element) 
 Dále můžeme resetovat hodnoty pomocí all, který nastaví skoro všechny elementy najednou. Hodnota all může být kterákoliv z inheritance hodnot</pre>
 
+<h2>Barvy</h2>
+<p>barvu lze nastavit u pozadí, textu, ohraničení atd...</p>
+<pre>Hodnoty:
+RGB
+
+  
+</pre>
 </body>
 </html>
