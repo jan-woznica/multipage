@@ -151,7 +151,7 @@ Attachment - má být obrázek fixní, scrollovatelný nebo local (fixnuté k el
 background-image nastavuje pozadí:
 Syntax: style="background-image: url('https://mostectilvi.esports.cz/foto/logo-ML2-velky.png');"
 background-position: (0,0)/top/center nastavuje pozici obrázku
-background-clip - obrázek zůstane uvnitř elementu
+background-clip - obrázek zůstane uvnitř elementu: border-box - obrázek mimo hranici / padding-box - obrázek mimo hranici padding /content-box uvnitř kontentu
 border-radius - zaoblení rohů
 box-shadow - nastavuje stín
 background-color - barva až k border a lze ji nastavit pomocí RGB, HSL, HEX, ale také opacity, ale to vezme text i barvu
@@ -161,8 +161,101 @@ background-size - velikost obrázku: px / contain-max maximální velikost, ale 
 background je shorthand verze pro: color, image, repeat a position:
 Syntax: background: #ffffff url("img_tree.png") no-repeat center fixed, background-site: cover
 
-Pomocí background-image lze vložit více pozadí a lze i shorthand property</pre>
+Pomocí background-image lze vložit více pozadí a lze i shorthand property
+Obrázky se budou overlapovat a stylovat najednou
 
+gradient-background - prolnutí pozadí pomocí více barev, css umí tři typy gradientů
+background-image: linear-gradient (nahoru, dolů, doprava atd... color-stop2)
+background-image: radial-gradient (velikost tvaru elipsy, kruhu nebo size keywords - closest side etc...
+background-image: conic-gradient ([z úhlu] defaultně 0deg [z pozice] defaultně center, [stupeň] barva, [stupeň] barva2 - točí se kolem bodu centra</pre>
+
+<h2>Overflow</h2>
+<p>Overflow nastává, když je až moc obsahu v element boxu. CSS se snaží vyhout ztrátě dat, tak vznikne overflow<br>
+Overflow element říká prohlížeči, jak má pracovat s overflowing obsahem</p>
+<pre>overflow: visible - základní hodnota
+overflow: hidden - aby text nepřetýkal element
+overflow: scroll - možnost v daném elementu scrollovat při overflow
+overflow-y/x: scroll - nastaví scroll pouze jedním směrem, ale x se nedoporučuji (raději použít wordbreak nebo overflow-wrap
+overflow: auto - prohlížeč přidá scroll v případě potřeby
+</pre>
+<h2>Nastovování velikost elementů v CSS</h2>
+<p>HTML elementy mají přirozené velikosti, dřív než je na ně aplikováno nějaké CSS<br>
+Max-wdith se využívá, aby se obrázky dobře scallovaly</p>
+<pre>1 wv = 1% pohledové šířce</pre>
+<h3>Max-width</h3>
+<p>používá se, protože na menších obrazovkách dostáváme scrollbal<br>
+dále se používá max-height, min-width</p>
+<pre>Hodnoty jsou px nebo třeba %</pre>
+
+<h2> Box-model</h2>
+<p>Box model se využívá při designu layoutu, protože každý element má okolo sebe box složený z padding, border a margin<br>
+outline je mimo element a může zasahovat do jiných elementů</p>
+<pre>CSS má taky různé typy boxů, podle toho, jak se zachovají v layoutu stránky: block box - zabírají celou šířku stránky / inline boxes - pouze část šířky stránky
+outer display type - blok začne na novém řádku, šířka a výška respektována, padding a margin odstrčí jiné elementy, pokud není nastavena width, tak vyplní dostupné místo v kontejneru
+inner display type - block nebo inline, pokud chceme změnit, tak lze display:flex
+outline-style/color/width/offset - přidá mezeru mezi outline a border
+Aby se tlačítka neoverlapovala display: inline-block</pre>
+
+<h3>Borders</h3> 
+<pre>dotted - tečkovaný / dashed - čárkovaný / solid - celý / double - dvojitý
+dále groove - 3D drážkovaná / ridge - hranatý / inset - vrchní polovina / outset - spodní polovina
+základní hodnoty: none - žádná / hidden - skrytá / mix - kombinace
+border-radius - nastavuje zaoblení rohů 
+
+Aby fungovali další styly border je potřeba použít border-style
+width - šířka (px, pt, cm, em, etc.. nebo thin, medium a thick) 
+lze nastavit každou stranu zvlášť: 5px 20px (5 horní a dolní, 20 strany)
+nebo lze horní, pravou, spodní a levou stranu
+nebo každou stranu zvlášť: border-top-style
+krom šířky můžeme nastavit border-color
+
+shorthand - width, style, color
+dalším specialitkou je nastavení obrázku jako border - round (opakování) / stretch (protáhnutí)
+</pre>
+
+<h3>Margin</h3>
+<p>margin (okraj) je prostor od border daného elementu k jimým elementům<br>
+Při setkání dvou marginů od dvou elementů se použije ten větší</p>
+<pre>margin: auto - hodnota se nastaví automaticky / inherit - zdědí od rodičovského elementu 
+jako u border, tak i u margin lze vybrat konkrétní stranu: margin-top, margin-left
+Pokud použijeme pouze margin, tak je to shorthand pro každou stranu
+</pre>
+
+<h3>Padding</h3>
+<p>Padding odděluje text elementu s jeho borders</p>
+<pre>Lze nastavit pro každou stranu zvlášť: padding-top
+padding je shorthand pro každou stranu
+box-sizing: border-box - element si bude vždy držet tvar</pre>
+
+<h4>Box-sizing</h4>
+<p>box-sizing zahrnuje padding a border do výšky a šířky elementu.
+Jinak je to složitější proces, jelikož musíme sčítat sami padding, border, height</p>
+<pre>Nastavení box sizing pro celou stránku: html {box-sizing: border-box;} *, *::before, *::after {box-sizing: inherit;} </pre>
+
+<h2>Text</h2>
+<p>CSS vlastnosti na stylování textu dělíme na dvě kategorie: font styly (ovlivňují fonty) a text layout styly (ovlivňují layouty)</p>
+<pre>color: - nastaví barvu textu, lze použít hsl, hex atd..
+text-align: right/center/left/justify - srovnání textu
+vertical-align: baseline/text-top/text-bottom/sub/super - srovnání text vertikálně
+text-align-last - poslední řádek
+direction rtl - specifikuje směr textu/směr psaní
+writing-mode: horizontal-tb/vertical-rl - směr zobrazení textu
+unicode-bidi - pozpátku
+text-decoration-line: text-overline/line-through/underline/overline/underline - čára přes text
+aby text neměl dekorace - text-decoration: none
+text-decoration-line-color - nastaví barvu
+text-decoration-line-style: dotted/dashed atd... styl čáry
+text-decoration-line-thickness - šířka linie
+Lze i shorthand verze
+line-height - výška každého řádku text (doporučeno mezi 1.5 - 2)
+Letter-spacing - nevyužívá se moc často
+word-spacing - přidá mezery mezi slova
+text-overflow - clip - text neoverflowuje kontejner
+div.test:hover {overflow: visible} uživatel uvidí celý text
+word-wrap: break-word - rozdělí slovo napůl, pokud bude až moc dlouhé 
+word-break: keep-all - když to bude možné
+word-break: break-all - jakékoliv slovo
   
+</pre>
 </body>
 </html>
