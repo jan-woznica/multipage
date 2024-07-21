@@ -239,23 +239,43 @@ text-align: right/center/left/justify - srovnání textu
 vertical-align: baseline/text-top/text-bottom/sub/super - srovnání text vertikálně
 text-align-last - poslední řádek
 direction rtl - specifikuje směr textu/směr psaní
-writing-mode: horizontal-tb/vertical-rl - směr zobrazení textu
+writing-mode: horizontal-tb/vertical-rl/vertical-lr - směr zobrazení textu
+width je v tomto případě inline-size a height je nahrazeno block-size
 unicode-bidi - pozpátku
 text-decoration-line: text-overline/line-through/underline/overline/underline - čára přes text
 aby text neměl dekorace - text-decoration: none
 text-decoration-line-color - nastaví barvu
 text-decoration-line-style: dotted/dashed atd... styl čáry
 text-decoration-line-thickness - šířka linie
-Lze i shorthand verze
+Lze i shorthand verzi
 line-height - výška každého řádku text (doporučeno mezi 1.5 - 2)
 Letter-spacing - nevyužívá se moc často
 word-spacing - přidá mezery mezi slova
+white-space: no-wrap - shrnutí slov nebo ne
 text-overflow - clip - text neoverflowuje kontejner
 div.test:hover {overflow: visible} uživatel uvidí celý text
 word-wrap: break-word - rozdělí slovo napůl, pokud bude až moc dlouhé 
 word-break: keep-all - když to bude možné
 word-break: break-all - jakékoliv slovo
-  
-</pre>
+text-indent - odstavec (px, pt atd...)
+text-shadow - přidá textu stín (lze nastavit horinzontalně/vertikálně, rozmazání a barvu
+text-shadow může být i více barev
+box-shadow - jeden nebo více stínů elementu - využívá se při tvorbě karet jak z papíru</pre>
+
+<h3>Fonty</h3>
+<p>v CSS je 5 generic font families</p>
+<pre>Serif, sans-serif jednodušší na čtení, monoscope, cursive, fantasy</pre>
+
+<p>V prohlížeči nemusí vždy být dostupné fonty, proto uvádíme i náhradní, takzvané web safe fonts<br>
+web safe fonts jsou univerzálně používáné na všech prohlížečích, ale i to není vždy 100%</p>
+<pre>font-family: "times New Roman", Times, serif
+Seznam bezpečných fontů: Arial, Helvetica (Sans-serif), Verdana (sans-serif), Tahoma, Verdena (Sans-serif, Trebuchet MS (sans-serif), Times New Roman, Times (serif), Georgia (serif), Garamond (serif), Courier New (monospace), Brush Script MT (cursive)
+Fonty lze i stylovat: 
+font-style: normal/italic/oblique
+font-weight: normal/light/bold
+font-variant: small-caps - malá písmena převedena na capslock, ale mají stejnou velikost
+text-transform: none/uppercase/lowercase/capitalize - transformace textu</pre>
+
+<h3>Font size</h3>
 </body>
 </html>
