@@ -71,6 +71,14 @@ krom toho odkazujeme v hlavě na externí stylesheety &ltlink rel="stylesheet" h
 Později zmíněné stylesheety budou vykresleny později
 </pre>
   
+<h3>Responsive Web Design (RWD)</h3>
+<p>Dělá stránky hezké na všech zařízeních<br>
+Tento termín byl poprvé použit v roce 2010 Ethanem Marcottem za pomoci fluid grids a media queries<br>
+Při vytváření stránek nespoléhat na zařízení, ale media queries</p>
+<pre>Stránka podle zařízení: &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+  
+</pre>
+  
 <h2>Selektory</h2>
 <p>Selektory jsou volání jednotlivých elementů. Selektor můžeme volat jeden nebo i více</p> 
 <pre>* {} vybere celý dokument nebo uvnitř rodičovského elementu
@@ -350,7 +358,8 @@ outline-offset - mezera mezi border a outline</pre>
 <h3>Media Queries</h3>
 <p>umožňují zjistit šířku a výšku displeje, úhel pohledu, rozlišení, tedy zda se jedná o mobil, pc atd...<br>
 Skládají se z media typu a mohou obsahovat jeden nebo více rozlišení, které budou buď true or false<br>
-V dnešní době se již doporučuje deisgnovat první mobil a až pak větší zařízení</p>
+V dnešní době se již doporučuje deisgnovat první mobil a až pak větší zařízení<br>
+Nejdříve jeden sloupec, poté přidávat další. Tyto stránky fungují na breakpointech (rozmezí šířky displeje)</p>
 <pre>media-type: all - všechny typy zařízení
 print - při tisku, ale ne v prohlížeči
 preview mode
@@ -364,6 +373,13 @@ or - alespoň jedno musí platit (stačí čárka jako oddělovač pravidel
 @media (30em <= width <= 50em)
 orientation: portrait nebo landscape - podle rozložení displeje
 pointing device - zařízení uživatele, které mu umožňuje hover
+
+multicol - specifikuje počet sloupců a ten je zobrazí velké podle velikosti displeje
+column-width - zobrazí se tolik sloupců, kolik je na ně místa
+flexbox - jak se elementy chovají při dané velikosti
+responsive images/media - používáme max-wdith
+responsive typography - měnící se velikost fontu uvnitř media queries
 </pre>
+
 </body>
 </html>
