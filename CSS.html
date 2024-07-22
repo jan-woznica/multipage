@@ -275,7 +275,34 @@ font-style: normal/italic/oblique
 font-weight: normal/light/bold
 font-variant: small-caps - malá písmena převedena na capslock, ale mají stejnou velikost
 text-transform: none/uppercase/lowercase/capitalize - transformace textu</pre>
+<p>Krom fontů v prohlížeči lze používat i vlastní fonty <br>
+Znamým zdrojem fontů jsou google fonty, na které se odkazuje pomocí stylesheetů<br>
+Nesmíme používat fontů až moc, jelikož zpomalí stránku</p>
+<pre>&ltlink rel="stylesheet" href= "https://fonts.googleapis.com/css?family=Sofia"&gt &ltstyle&gt body {font-family: "Sofia", sans-serif;}</pre>
 
-<h3>Font size</h3>
+<h4>@font-face - jsou moje vlastní fonty, které nahrávám na server</h4>
+<p>Fonty většinou nejsou zdarma a musí se za ně platit nebo splňovat licenční podmínky, jako je zmínění autora<br>
+Pokud se mi líbí font na nějaké stránce, tak je možné použít inspect v prohlížeči v developer tools a následně firefox font editoru</p>
+<pre>Většina prohlížečů podporue WOFF/WOFF2 (Web Open Font Format version 1 a 2)
+WOFF2 podporuje TrueType a OpenType
+Samozřejmě pokud pracuejem se staršími prohlížeči, tak nesmíme opomenout EOT (Embedded Open Type, TTF (TrueType Font) a SVG fonty pro stáhnutí 
+Fonty mouhou pocházet ze tři zdrojů:
+Free font distributor - fonty zdarma, ale mohou mít licence: font squirrel, datafont nebo Everything Fonts
+  - Pokud se mi líbí font zdarma: zkontrolovat, zda splňuji licence, poté vložit na free font distributora (fontsquirrel webfont generator)
+    Nahrát a zkontrolovat, zda je legálně použít, pokud ano, tak stáhnout. Získáme zip, ten unzipneme
+  - sfnt2woff-zopfii pro ttf do woff a woff2 pro ttf do woff2, poté otevřít stylesheet a zkopírovat dva @font-face pravidla do mého css souboru, mělo by vypadat nějak takto:
+    @font-face { font-family: "zantrokeregular"; src:  url("fonts/zantroke-webfont.woff2") format("woff2"),  url("fonts/zantroke-webfont.woff") format("woff"); font-weight: normal;font-style: normal;}
+    v-fonts.com nebo axis-praxis.org:
+    @font-face {font-family: "myfirstFont"; src: url("..."), pokud přidám font-weight: bold, tak se bude font aplikovat na všechny bold texty<br>poté už musím jenom aplikovat font html {font-family: "myfirstFont"
+Paid font distributor - stránka zpřístupňuje fonty za peníze: myfont.com, fontdries na linotype
+Online font service - stránka ukládá fonty a dělá celý proces jednodušší
+  - font nemusím stahovat, např google fonts, zkopíruji a vložím do mého css
+    &ltlink href='https://fonts.googleapis.com/css?family=Lobster|Raleway' rel='stylesheet' type='text/css'&gt
+  - Pak ještě natavíme font: &ltlink href="google-font.css" rel="stylesheet" type="text/css"&gt a takto: h1, h2 { font-family: 'Lobster', cursive;</pre>
+<h4>Font size</h4>
+<pre>h1 - Velikost fontu lze nastavit buď pomocí h1,h2,h3
+px - pomocí velikostních hodnot jako jsou px, em, atd... (16px = 1em)
+% - Krom toho se také doporučuje používat velikosti v procentech {font-size: 90%;}
+vw - responnzivní velikosti - viewport width - mění se podle velikosti displeje (1vw = 1% displeje)</pre>
 </body>
 </html>
