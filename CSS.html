@@ -313,7 +313,12 @@ Linky lze stylovat i podle jejich stavu:
 a:link - nenavštívený
 a:visited - navštívený
 a:hover - myš na odkazu
-a:active - když na odkaz klikneme</pre>
+a:active - když na odkaz klikneme
+a:focus - jsme na něm
+
+Ikona za https linkem:
+a[href^="http"]::after { content: "";display: inline-block;width: 0.8em;height: 0.8em; margin-left: 0.25em; 
+background-image: url("external-link-52.png");}</pre>
 
 <h2>Seznamy</h2>
 <p>Existuje několik typů seznamů: Ordered list(ol), unordered list(ul),</p>
@@ -321,7 +326,10 @@ a:active - když na odkaz klikneme</pre>
 OL - circle, square, upper-roman,lower-roman
 UL - lower-alpha
 list-style-image - nastaví obrázek jako marker
-list-style-position: outside/inside - zda uvnitř nebo ne boxu</pre>
+list-style-position: outside/inside - zda uvnitř nebo ne boxu
+start - začne list na daném čísle
+reversed - obráceně od daného čísla
+value - nastaví číslo</pre>
 
 <h2>Tabulky</h2>
 <pre>thead - označuje nadpisy
