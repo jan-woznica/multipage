@@ -344,5 +344,26 @@ style="overflow-x: auto - bude mít scrollbar
 scope="row" - řekne rootu, jestli se jedná o sloupec či řádek
 </pre>
 
+<h2>User Interfence</h2>
+<pre>resize - jak má být resizible uživatelem: horizontal/vertical/both/none
+outline-offset - mezera mezi border a outline</pre>
+<h3>Media Queries</h3>
+<p>umožňují zjistit šířku a výšku displeje, úhel pohledu, rozlišení, tedy zda se jedná o mobil, pc atd...<br>
+Skládají se z media typu a mohou obsahovat jeden nebo více rozlišení, které budou buď true or false<br>
+V dnešní době se již doporučuje deisgnovat první mobil a až pak větší zařízení</p>
+<pre>media-type: all - všechny typy zařízení
+print - při tisku, ale ne v prohlížeči
+preview mode
+screen - pc, tablety, mobily
+Syntax: @media not/only mediatype and (media feature) and (media feature) {CSS-Code;
+        @media screen and (max-width: 600px) {.topnav a {float: none; width: 100%;
+Pokud použijeme not nebo only, tak je zapotřebí i mediatype - ochrana před staršími zařízeními: 
+not - obrací význam, and kombinuje
+and - obě musí platit
+or - alespoň jedno musí platit (stačí čárka jako oddělovač pravidel
+@media (30em <= width <= 50em)
+orientation: portrait nebo landscape - podle rozložení displeje
+pointing device - zařízení uživatele, které mu umožňuje hover
+</pre>
 </body>
 </html>
