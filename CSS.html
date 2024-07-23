@@ -35,6 +35,9 @@ Máme tři možnosti, jak aplikovat CSS: external- pomocí stylesheety v samosta
 CSS soubory ukládáme s příponou .css
 CSS komentáře píšeme /2B51 uvnitř komentáře 2B51/</pre>
 
+<h3>Frameworky</h3>
+<pre>Lze použít stylesheet jako <a href="https://www.w3schools.com/css/css_rwd_templates.asp">W3.CSS</a>, Bootstrap</pre>
+
 <h2>Cascading Koncept</h2>
 <p>Hodnocení důležitosti CSS se dá rozdělit na 7 kroků</p>
 <pre>1. Nalezení všech bloků ovlivňující jeden element
@@ -62,21 +65,18 @@ Layer a media queries: pokud propojím layer s media queries a velikost nesouhla
 <pre>Nastavují pravidla, která platí, při splnění daných podmínek
 Obrazovka větší než 30em, tak modrý text: @media (min-width: 30em) { body {color: blue;}}
 </pre>
-  
+<h3>Responsive Web Design (RWD)</h3>
+<p>Dělá stránky hezké na všech zařízeních<br>
+Tento termín byl poprvé použit v roce 2010 Ethanem Marcottem za pomoci fluid grids a media queries<br>
+Při vytváření stránek nespoléhat na zařízení, ale media queries</p>
+<pre>Stránka podle zařízení: &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt</pre>
+ 
 <h2>CSS v &lthead&gt</h2>
 <pre>Při psaní CSS začínáme selektorem (h1, p atd...) po selektoru jsou závorky a v nich pravidla např: {height: 100px;}
 Selektory mohou být elementy h1, p nebo classy s tečkou .navigation .header nebo jedinečné id #header #row (id lze využít pouze jednou
 * selektor označuje celý html soubor
 krom toho odkazujeme v hlavě na externí stylesheety &ltlink rel="stylesheet" href="mystyle.css"&gt
 Později zmíněné stylesheety budou vykresleny později
-</pre>
-  
-<h3>Responsive Web Design (RWD)</h3>
-<p>Dělá stránky hezké na všech zařízeních<br>
-Tento termín byl poprvé použit v roce 2010 Ethanem Marcottem za pomoci fluid grids a media queries<br>
-Při vytváření stránek nespoléhat na zařízení, ale media queries</p>
-<pre>Stránka podle zařízení: &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
-  
 </pre>
   
 <h2>Selektory</h2>
@@ -150,6 +150,7 @@ HSLA - stejné jako HSL + A jako alpha
 Alpha znaměná transparentnost a nabývá hodnot 0-1
 
 Klíčové znaky barev: transparent - nastavuje transparentnost, currentcolor - nastaví současnou barvu, inherit - zdědí barvu od rodiče</pre>
+
 <h2>Pozadí</h2>
 <p>Jednoduchá pozadí obsahují obrázky<br>
 obrázek se nezmenšuje do menších tvarů, ale do větších tvarů bude vložen vícekrát<br>
@@ -177,6 +178,12 @@ background-image: linear-gradient (nahoru, dolů, doprava atd... color-stop2)
 background-image: radial-gradient (velikost tvaru elipsy, kruhu nebo size keywords - closest side etc...
 background-image: conic-gradient ([z úhlu] defaultně 0deg [z pozice] defaultně center, [stupeň] barva, [stupeň] barva2 - točí se kolem bodu centra</pre>
 
+<h3>Obrázky</h3>
+<p>u obrázků lze využít media queries, aby se zobrazoval obrázek podle dané velikosti displeje</p>
+<pre>srcset - zdroj obrázku
+Když bude mít obrázek width= 100% a height: auto, tak bude responzivní
+&ltpicture&gt - dává volnější ruce developerovy, protože může použít více obrázků
+  
 <h2>Overflow</h2>
 <p>Overflow nastává, když je až moc obsahu v element boxu. CSS se snaží vyhout ztrátě dat, tak vznikne overflow<br>
 Overflow element říká prohlížeči, jak má pracovat s overflowing obsahem</p>
@@ -185,7 +192,10 @@ overflow: hidden - aby text nepřetýkal element
 overflow: scroll - možnost v daném elementu scrollovat při overflow
 overflow-y/x: scroll - nastaví scroll pouze jedním směrem, ale x se nedoporučuji (raději použít wordbreak nebo overflow-wrap
 overflow: auto - prohlížeč přidá scroll v případě potřeby
-</pre>
+
+Z-index property
+specifikuje pozici obejektů, bez z-indexu se bude zobrazovat nejposledněji přidaný objekt</pre>
+
 <h2>Nastovování velikost elementů v CSS</h2>
 <p>HTML elementy mají přirozené velikosti, dřív než je na ně aplikováno nějaké CSS<br>
 Max-wdith se využívá, aby se obrázky dobře scallovaly</p>
@@ -273,7 +283,6 @@ box-shadow - jeden nebo více stínů elementu - využívá se při tvorbě kare
 <h3>Fonty</h3>
 <p>v CSS je 5 generic font families</p>
 <pre>Serif, sans-serif jednodušší na čtení, monoscope, cursive, fantasy</pre>
-
 <p>V prohlížeči nemusí vždy být dostupné fonty, proto uvádíme i náhradní, takzvané web safe fonts<br>
 web safe fonts jsou univerzálně používáné na všech prohlížečích, ale i to není vždy 100%</p>
 <pre>font-family: "times New Roman", Times, serif
@@ -381,5 +390,79 @@ responsive images/media - používáme max-wdith
 responsive typography - měnící se velikost fontu uvnitř media queries
 </pre>
 
+<h2>Layouty</h2>
+<p>Layouty umožňují nastavení, kde se jednotlivé elementy mají nacházet<br>
+Pod layouty spadá: normal flow (vytvořené prohlížečem), flexbox, grid, floats, positioning, block direction</p>
+<pre>Metody, jak změnit layout:
+display - obsahuje hodnoty jako block, inline, inline-block
+floats - left/right/center - zaobalí vše okolo do bloku
+position - static/fixed top - poloha uvnitř jiného boxu
+table layout - dispay: table - doplňky na designovaní částí html
+multi-column layout - seskupení do bloků
+
+Header a navigační menu - pbsahují logo stránky, background-color, text-align, padding
+kontent a main kontent - 1-3 sloupce, media-screen
+footer - background-color, text-align, padding
+<a href="https://www.w3schools.com/css/css_website_layout.asp">Layout zdarma</a></pre>
+
+<h3>Legacy layouty</h3>
+<p>CSS nemělo původně vestavěné grid systémy. Místo toho se používali techniky na vytvoření grid podobného designu, které dnes nazývámme legacy layout<br>
+Jejich znalost se hodí při práci se staršími weby</p>
+<pre>HTML má nastavenou šířku a elementy uvnitř mají vždy šířku rovnu rodičovskému, kde se dále využívá float: left a right
+<pre>Při 12 sloupcích 100%/12=8,33%, poté vytvoříme pro každý sloupec classu
+HTMl elementy musí mít: box-sizing, border-box, floating left a padding
+* {box-sizing: border-box;}
+
+Při 12 sloupcích 100%/12=8,33%, poté vytvoříme pro každý sloupec classu
+responsivní grid-view má 12 sloupců, pracujeme podobně, ale nastavíme 12 sloupců, které pak rozdělíme na dva sloupce (velikost sloupců i mezer je spočítaná)
+takovéto designování layoutu se nazývá unsemantické, jelikož neslouží ke stylování kontentu
+Third party systems - umožňují náhled do grid systémů. Jako první nabídka v prohlížeči bude Bootstrap nebo Foundation a další. Na mdn pracovali se Skeletonem
+
+Starší prohlížeče - pomocí analytic nebo Statcounterlze zjistit, jaké prohlížeče mají návštěvníci
+Pokud si nejsem jist, zda mohu použít nějaké CSS, tak to mohu zkontrolovat na "Can I use"
+Další praktikou je použití feature quieries - @supports, kdy pokud prohlížeč nezná feature, tak ho pouze ignoruje</pre>
+
+<h3>Display</h3>
+<p>Display slouží ke změně toho, jak je něco zobrazeno</p>
+<pre>Defaultní je block nebo inline
+block - začíná na novém řádku
+inline - bere minimum potřebného místa
+display hodnoty: contents/flex/grid/inline-block/inline-flex/inline-grid/inline-table/list-item/run-in/table/none
+display: none - schovává element (například otevírací menu)
+display: block - celý řádek bude klikatelný
+visbility: hidden - bude na stránce, ale nebude vidět
+
+width - u malé obrazovky vznikne scrollbar
+max-width - nevznikne scrollbar
+position: 
+static (defaultní)
+relative (posunutí od původní polohy)
+fixed (připevněné na jedno místo)
+absolute (jako fixed, ale k nějakému elementu s position)
+sticky (je vždy vidět)
+</pre>
+
+<h3>Flexbox</h3>
+<p>Jedná se krátký název pro flexible Box Layout, které slouží k designování v jiné dimenzi, ať už jde o řádky nebo sloupce<br>
+Flexbox umožňuje vycentrovat bloky, aby elementy mělo danou šířku<br>
+Problém nastává, když máme danou šířku, ale child elementy začnou oveflowovat layout</p>
+<pre>Řešením je flex: wrap - zalomí na další řádky (poslední sloupce mohou mít větší sířku
+flex-direction - řady nebo sloupce
+wrap - podle velikosti obrazovky
+flow - shorthand pro direction a wrap
+
+Flex itemy:
+flex: 1 - itemy zaberou celou šířku
+article:nth-of-type(3) {flex: 2} - šířka articlu bude dvakrát větší, jelikož šířky se sčítají
+dobrou praktikou bývá místo vložení druhé hodnoty vložení : auto
+order - pořadí jednotek
+flex - shorthand pro grow/shrink
+basis - minimální velikost
+after-grow - velikost oproti ostatním
+shrink - zmenšení oproti ostatním
+Kontejnery i lze vzájemně nestovat
+</pre>
+
+<h3>Grid layout</h3>
 </body>
 </html>
