@@ -433,14 +433,16 @@ display: block - celý řádek bude klikatelný
 visbility: hidden - bude na stránce, ale nebude vidět
 
 width - u malé obrazovky vznikne scrollbar
-max-width - nevznikne scrollbar
-position: 
-static (defaultní)
-relative (posunutí od původní polohy)
-fixed (připevněné na jedno místo)
-absolute (jako fixed, ale k nějakému elementu s position)
-sticky (je vždy vidět)
-</pre>
+max-width - nevznikne scrollbar</pre>
+  
+<h3>Positioning</h3>
+<p>Slouží k posouvání elementů na jiné pozice</p>
+<pre>Static - default
+relative - úprava pozice vůči původní
+absolute - posunuto z layoutu na úroveň jako je HTML
+Fixed - pořád na stejném místě
+sticky - když nascrolluji na element, tak dále se drží na obrazovce
+z-index - nastavuji pozici relative elementů</pre>
 
 <h3>Flexbox</h3>
 <p>Jedná se krátký název pro flexible Box Layout, které slouží k designování v jiné dimenzi, ať už jde o řádky nebo sloupce<br>
@@ -464,5 +466,35 @@ Kontejnery i lze vzájemně nestovat
 </pre>
 
 <h3>Grid layout</h3>
+<p>Grid oproti flex layoutu, který je na jednu dimenzi, tak grid layout je na dvě (sloupce a řádky)<br>
+Grid umožňuje vytvoření designu, kde elementy mají danou pozici i velikost
+Tedy lze nastavit se buď spolehnout na automatický placement elementů nebo určit každému elementu jeho pozici<br>
+Krom toho lze nastavit i mezery</p>
+<pre>fr = frakce dostupného místa
+grid-gap - velikost mezery
+column/row-gap -velikost mezery mezi sloupci/řádky
+display: grid - samotný o sobě nic neudělá, jelikož potřebuje další hodnoty
+grid-template-columns - definuje počet sloupců v gridu: např: 100px 200em auto 150px
+template-column: repeat (4, 1fr) - 4 sloupce a každý velikosti 1 fr 
+repeat(auto-fit, minmax (200px, 1fr) - dva sloupce a několik řad
+grid-auto-rows: minmax(100ox, auto) - při přidání obsahu se roztáhne, aby se vešel
+justify-content - zarovnání textu uvnitř kontejneru
+grid-column - specifikuje, který sloupce má obsahovat daný element
+grid-row - na který řádek 
+grid-area - pojmenování itemů
+
+Použití grid layoutu při 4 sloupcích: 
+body {display:grid; grid-gap: 1em; grid-template-rows: auto auto 1fr auto; min-height: 100vh;} 
+@media (min-width: 40em) {body{grid-template-columns: 12em 1fr; grid-template-rows: auto 1fr auto;}} header {grid-column: span 2;}</pre>
+
+<h3>Float a Clear</h3>
+<p>Floats již není tolik důležitý na layotu stránky a dnes se využívá grid a flex<br>
+Původně sloužil na floating obrázky uvnitř sloupce textu<br>
+float je tedy obtékání textu a clear je vedle čeho se float vznáší </p>
+<pre>float: left/right/none/inherit 
+clear: right/left/none/inherit - když chceme další element na dalším řádku
+Float je vytažen z layoutu, proto nestačí ho vložit do boxu, je potřeba:
+display: flow-root - vytvoří BFC (block formatting context)</pre>
+
 </body>
 </html>
