@@ -60,7 +60,9 @@ Tyto kyblíky se vzájemně nemohou ovlivnit,</p>
  <p>Prohlížeč čte Javscript od shora dolů, proto musí být opatrné, kde vložím věci</p>
 
  <h3>Jak vložím Javacript</h3>
- <p></p>
+ <pre>když přidám do hlavy na external scriptu &ltscript type="module"&gt, tak bude kód vnímán jako modul a bude načten až po html, tato varianta je také lepší 
+ dále bych měl přidat defer a když nepotřebuji, aby se načetl celý dokument html, tak async
+ pro internal scripty by měl být kód zabalen v DOMContentLoaded event listeneru</pre>
  
  <h2>Základy</h2>
  <p>následují základní funkce Javascriptu</p>
